@@ -1,6 +1,6 @@
 <template>
 <div>
-  <menu-bar :model="navigation" class="bg-primary flex flex-end">
+  <menu-bar :model="navigation" class="bg-cyan-200 flex flex-end">
     <template #start>
         <div class = "flex">
             <div class="m-3">
