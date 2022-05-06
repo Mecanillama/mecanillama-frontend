@@ -9,7 +9,7 @@
     "appointments": [
       {
         "id": 1,
-        "customer": "Pedro Perez",
+        "customer": "Ron Weasley",
         "mechanic": "Fast Car",
         "date": "2022-09-03",
         "time": "09:00",
@@ -17,7 +17,7 @@
       },
       {
         "id": 2,
-        "customer": "Pedro Perez",
+        "customer": "Ron Weasley",
         "mechanic": "Formula I",
         "date": "2015-09-10",
         "time": "17:00",
@@ -25,7 +25,7 @@
       },
       {
         "id": 3,
-        "customer": "Pedro Perez",
+        "customer": "Ron Weasley",
         "mechanic": "Fix it Up",
         "date": "2015-09-14",
         "time": "16:00",
