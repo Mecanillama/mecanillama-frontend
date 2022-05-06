@@ -13,7 +13,7 @@
         "mechanic": "Fast Car",
         "date": "2022-09-03",
         "time": "09:00",
-        "status": "Finished"
+        "finished": true
       },
       {
         "id": 2,
@@ -21,7 +21,7 @@
         "mechanic": "Formula I",
         "date": "2015-09-10",
         "time": "17:00",
-        "status": "Finished"
+        "finished": true
       },
       {
         "id": 3,
@@ -29,7 +29,7 @@
         "mechanic": "Fix it Up",
         "date": "2015-09-14",
         "time": "16:00",
-        "status": "Due"
+        "finished": false
       },
       {
         "id": 4,
@@ -37,7 +37,7 @@
         "mechanic": "Fix it Up",
         "date": "2015-09-17",
         "time": "12:00",
-        "status": "Due"
+        "finished": false
       },
       {
         "id": 5,
@@ -45,7 +45,7 @@
         "mechanic": "Formula I",
         "date": "2015-09-18",
         "time": "13:00",
-        "status": "Due"
+        "finished": false
       },
       {
         "id": 5,
@@ -53,7 +53,7 @@
         "mechanic": "Fast Car",
         "date": "2015-09-12",
         "time": "14:00",
-        "status": "Done"
+        "finished": true
       }
     ]
   }

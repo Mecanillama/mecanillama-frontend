@@ -52,7 +52,7 @@ const router = createRouter({
     {
       path:'/appointments-customer',
       name: 'appointments-customer',
-      component: () => import('../customer/pages/appointments-customer.component.vue')
+      component: () => import('../appointments/pages/appointments-customer.component.vue')
     }
   ]
 })

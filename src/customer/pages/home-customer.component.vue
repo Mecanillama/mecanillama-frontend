@@ -1,9 +1,9 @@
 <template>
 <general-header-component></general-header-component>
 <div class="grid m-6 ">
-    <pv-card class="col-12 md:col-6 lg:col-3">
+    <pv-card class="col-12 md:col-6 lg:col-4">
         <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
         </template>
         <template #title>
             Fast Car
@@ -21,9 +21,9 @@
             </router-link>
         </template>   
     </pv-card>
-        <pv-card class="col-12 md:col-6 lg:col-3">
+        <pv-card class="col-12 md:col-6 lg:col-4">
         <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
         </template>
         <template #title>
             Fast Car
@@ -41,9 +41,9 @@
             </router-link>
         </template>   
     </pv-card>
-    <pv-card class="col-12 md:col-6 lg:col-3">
+        <pv-card class="col-12 md:col-6 lg:col-4">
         <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
         </template>
         <template #title>
             Fast Car
@@ -61,30 +61,9 @@
             </router-link>
         </template>   
     </pv-card>
-    <pv-card class="col-12 md:col-6 lg:col-3">
+        <pv-card class="col-12 md:col-6 lg:col-4">
         <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
-        </template>
-        <template #title>
-            Fast Car
-        </template>
-        <template #subtitle>
-            Lima, Peru
-        </template>
-        <template #content>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-        </template>
-        <template #footer>
-            <router-link to="/mechanic-profile">
-                <pv-button icon="pi pi-plus" label="See More" />
-            </router-link>
-        </template>   
-    </pv-card>
-
-    <pv-card class="col-12 md:col-6 lg:col-3">
-        <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
         </template>
         <template #title>
             Fast Car
@@ -103,9 +82,30 @@
         </template>   
     </pv-card>
 
-    <pv-card class="col-12 md:col-6 lg:col-3">
+    <pv-card class="col-12 md:col-6 lg:col-4">
         <template #header>
-            <img src="https://images.pexels.com/photos/1131221/pexels-photo-1131221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  style="{height: 360px; width: 340px;}" />
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
+        </template>
+        <template #title>
+            Fast Car
+        </template>
+        <template #subtitle>
+            Lima, Peru
+        </template>
+        <template #content>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+        </template>
+        <template #footer>
+            <router-link to="/mechanic-profile">
+                <pv-button icon="pi pi-plus" label="See More" />
+            </router-link>
+        </template>   
+    </pv-card>
+
+    <pv-card class="col-12 md:col-6 lg:col-4">
+        <template #header>
+            <img src="https://i.imgur.com/94P70vI.jpeg"  style="{height: 360px; width: 340px;}" />
         </template>
         <template #title>
             Fast Car
