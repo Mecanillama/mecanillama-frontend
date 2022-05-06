@@ -22,6 +22,8 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import ToastService from "primevue/toastservice";
+import RadioButton from 'primevue/radiobutton';
+
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
 
@@ -48,4 +50,5 @@ app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
 app.component("menu-bar", MenuBar);
+app.component('pv-radio-button', RadioButton);
 app.mount('#app')

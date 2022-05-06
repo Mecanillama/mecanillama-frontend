@@ -4,7 +4,7 @@
 
 <script>
 import HomeView from './views/HomeView.vue';
-import headerComponent from './components/header.component.vue';
+import headerComponent from './components/general-header.component.vue';
 export default{
   name: 'app',
     components: {

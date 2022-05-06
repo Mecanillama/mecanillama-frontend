@@ -1,6 +1,6 @@
 <template>
 <div>
-  <menu-bar :model="navigation" class="bg-cyan-200 flex flex-end">
+  <menu-bar :model="navigation" class="bg-cyan-200 flex ">
     <template #start>
         <div class = "flex">
             <div class="m-3">
@@ -13,7 +13,7 @@
                     v-model="search"
                     class="border-round p-3 px-3"
                     placeholder="Search" />
-            </div>
+        </div>
         </div>
     </template >
   </menu-bar>
@@ -23,7 +23,7 @@
 <script>
 
 export default{
-    name: 'headerComponent',
+    name: 'general-header',
     data(){
         return{
             navigation:[

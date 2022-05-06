@@ -24,7 +24,7 @@
 
 import { RouterLink, RouterView } from "vue-router";
 export default {
-    name: 'homeView',
+    name: 'HomeView',
     components:{
 
     }
