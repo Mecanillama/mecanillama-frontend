@@ -2,13 +2,13 @@
 <RouterView />
   <div class = "home">
     <h1 class="mr-2">Mecanillama</h1>
-    <p>La plataforma para talleres vehiculares</p>
+    <p>The app for connecting driver and workshop</p>
     <div class="buttons">
       <div class = "button">
         <pv-button label = "Registrarse" class = "p-button-rounded p-button-lg"/>
       </div>
       <div class="button">
-        <RouterLink to="/about">
+        <RouterLink to="/signin">
         <pv-button label = "Iniciar sesion" class = "p-button-rounded p-button-lg" />
         </RouterLink>
       </div>
