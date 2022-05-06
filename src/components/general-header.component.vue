@@ -19,7 +19,7 @@
     <template #end>
     <div class="m-3">
             <div class="flex align-items-center justify-content-center">
-                <pv-avatar image="https://notitotal.com/wp-content/uploads/2015/09/mecanico.jpg"  class="mr-2" size="large" shape="circle" />
+                <pv-avatar image="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"  class="mr-2" size="large" shape="circle" />
                 <span>User 23432</span>
             </div>
     </div>
