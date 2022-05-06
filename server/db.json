@@ -5,5 +5,55 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "name": "typicode" },
+    "appointments": [
+      {
+        "id": 1,
+        "customer": "Pedro Perez",
+        "mechanic": "Fast Car",
+        "date": "2022-09-03",
+        "time": "09:00",
+        "status": "Finished"
+      },
+      {
+        "id": 2,
+        "customer": "Pedro Perez",
+        "mechanic": "Formula I",
+        "date": "2015-09-10",
+        "time": "17:00",
+        "status": "Finished"
+      },
+      {
+        "id": 3,
+        "customer": "Pedro Perez",
+        "mechanic": "Fix it Up",
+        "date": "2015-09-14",
+        "time": "16:00",
+        "status": "Due"
+      },
+      {
+        "id": 4,
+        "customer": "Thomas Edison",
+        "mechanic": "Fix it Up",
+        "date": "2015-09-17",
+        "time": "12:00",
+        "status": "Due"
+      },
+      {
+        "id": 5,
+        "customer": "James Watson",
+        "mechanic": "Formula I",
+        "date": "2015-09-18",
+        "time": "13:00",
+        "status": "Due"
+      },
+      {
+        "id": 5,
+        "customer": "Jim Moriarty",
+        "mechanic": "Fast Car",
+        "date": "2015-09-12",
+        "time": "14:00",
+        "status": "Done"
+      }
+    ]
   }
