@@ -5,11 +5,13 @@
     <p>The app for connecting driver and workshop</p>
     <div class="buttons">
       <div class = "button">
-        <pv-button label = "Registrarse" class = "p-button-rounded p-button-lg"/>
+      <RouterLink to="/signup">
+        <pv-button label = "Sign up" class = "p-button-rounded p-button-lg"/>
+      </RouterLink>
       </div>
       <div class="button">
         <RouterLink to="/signin">
-        <pv-button label = "Iniciar sesion" class = "p-button-rounded p-button-lg" />
+        <pv-button label = "Sign in" class = "p-button-rounded p-button-lg" />
         </RouterLink>
       </div>
     </div>

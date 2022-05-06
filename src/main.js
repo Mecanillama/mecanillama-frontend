@@ -23,6 +23,8 @@ import Tag from "primevue/tag";
 import Card from "primevue/card";
 import ToastService from "primevue/toastservice";
 import RadioButton from 'primevue/radiobutton';
+import Avatar from 'primevue/avatar';
+import Password from 'primevue/password';
 
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
@@ -51,4 +53,6 @@ app.component("pv-tag", Tag);
 app.component("pv-card", Card);
 app.component("menu-bar", MenuBar);
 app.component('pv-radio-button', RadioButton);
+app.component('pv-avatar', Avatar);
+app.component('pv-password', Password);
 app.mount('#app')

@@ -20,11 +20,11 @@
     </div>
 <div class="text-xl flex flex-column m-3">
     <div class="field-radiobutton w-full">
-        <pv-radio-button id="option1" name="user" value="driver" v-model="user" />
+        <pv-radio-button id="option1" name="user" value="home-customer" v-model="user" />
         <label for="city1">I am a driver</label>
     </div>
     <div class="field-radiobutton w-full">
-            <pv-radio-button id="option2" name="user" value="mechanic" v-model="user" />
+            <pv-radio-button id="option2" name="user" value="home-mechanic" v-model="user" />
             <label for="city1">I am a mechanic</label>
     </div>
 </div>
@@ -41,8 +41,12 @@ export default {
     name: 'signin',
     data(){
         return{
-            user:null
+            user:null,
+            value:null
         }
+    },
+    methods: {
+        
     }
 }
 </script>
