@@ -50,10 +50,17 @@ const router = createRouter({
       component: () => import('../mechanic/pages/mechanic-profile.component.vue')
     },
     {
-      path:'/appointments',
-      name: 'appointments',
-      component: () => import('../customer/pages/appointments-customer.component.vue')
-    }
+      path:'/appointments-customer',
+      name: 'appointments-customer',
+      component: () => import('../appointments/pages/appointments-customer.component.vue')
+    },
+    {
+      path:'/appointments-mechanic',
+      name: 'appointments-mechanic',
+      component: () => import('../appointments/pages/appointments-mechanic.component.vue')
+    },
+
+
   ]
 })
 
