@@ -2,7 +2,7 @@
   <general-header-component></general-header-component>
     <div class="mechanic-profile">
         <div class="flex">
-            <img  style="{height: auto; width: auto;}" class="w-3 m-6 " src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="car">
+            <img  style="{height: auto; width: auto;}" class="w-3 m-6 " src="https://i.imgur.com/94P70vI.jpeg" alt="car">
             <div class="w-9 content m-6 flex-column mx-8">
             <h1>Fast Car</h1>
             <p> Have you heard about our Car Service Plan? There are three easy ways to help you pay for your car service including 
