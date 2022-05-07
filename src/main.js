@@ -12,6 +12,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
+import MenuBar from "primevue/menubar";
 import InputText from "primevue/inputtext";
 import Sidebar from "primevue/sidebar";
 import Row from "primevue/row";
@@ -21,6 +22,12 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import ToastService from "primevue/toastservice";
+import RadioButton from 'primevue/radiobutton';
+import Avatar from 'primevue/avatar';
+import Password from 'primevue/password';
+
+// PrimeFlex Companion
+import "primeflex/primeflex.css";
 
 const app = createApp(App)
 
@@ -44,4 +51,8 @@ app.component("pv-toast", Toast);
 app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
+app.component("menu-bar", MenuBar);
+app.component('pv-radio-button', RadioButton);
+app.component('pv-avatar', Avatar);
+app.component('pv-password', Password);
 app.mount('#app')
