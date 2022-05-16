@@ -5,12 +5,12 @@
     <p>The app for connecting driver and workshop</p>
     <div class="buttons">
       <div class = "button">
-      <RouterLink to="/signup">
+      <RouterLink to="/sign-up">
         <pv-button label = "Sign up" class = "p-button-rounded p-button-lg"/>
       </RouterLink>
       </div>
       <div class="button">
-        <RouterLink to="/signin">
+        <RouterLink to="/sign-in">
         <pv-button label = "Sign in" class = "p-button-rounded p-button-lg" />
         </RouterLink>
       </div>

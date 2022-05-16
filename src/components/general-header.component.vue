@@ -36,7 +36,7 @@ export default{
         return{
             navigation:[
                 { label: "Home", to: "/home-customer" },
-                { label: "Appointments", to: "/appointments" },
+                { label: "Appointments", to: "/appointments-customer" },
                 { label: "Favourites", to: "/favourites" },
                 { label: "Notifications", to: "/notifications" },
             ]

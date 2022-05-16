@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "mecanillama-frontend"
-  }
+    "default": "upc-mecanillama-si653",
+    "staging": "upc-mecanillama-si653"
+  },
+  "targets": {}
 }
