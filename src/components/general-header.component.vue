@@ -8,21 +8,22 @@
                     <h1 class="font-bold">Mecanillama</h1>
                 </RouterLink>
             </div>
-            <div class="m-3">
-                <input
-                    v-model="search"
-                    class="border-round p-3 px-3"
-                    placeholder="Search" />
-            </div>
         </div>
     </template>
     <template #end>
-    <div class="m-3">
-            <div class="flex align-items-center justify-content-center">
-                <pv-avatar image="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"  class="mr-2" size="large" shape="circle" />
-                <span>User 23432</span>
+        <div class="flex">
+        <div class="m-3 search-input w-full">
+            <pv-input-text
+                v-model="search"
+                class="border-round p-3 px-3 w-full"
+                placeholder="Search" />
+        </div>    
+            <div class="flex align-items-center justify-content-center cursor-pointer profile text-center">
+                <menu-bar :model="accountMenu"></menu-bar>
+                <pv-avatar image="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=128"  class="mr-2" size="large" shape="circle" />
+                <span>Ron Weasley</span>
             </div>
-    </div>
+        </div>
     </template>
   </menu-bar>
   </div>
@@ -35,11 +36,23 @@ export default{
     data(){
         return{
             navigation:[
-                { label: "Home", to: "/home-customer" },
-                { label: "Appointments", to: "/appointments-customer" },
-                { label: "Favourites", to: "/favourites" },
-                { label: "Notifications", to: "/notifications" },
+                { label: "Home",icon:'pi pi-fw pi-file', to: "/home-customer" },
+                { label: "Appointments", icon:'pi pi-fw pi-calendar',to: "/appointments-customer" },
+                { label: "Favourites", icon:'pi pi-fw pi-star', to: "/favourites" },
+                { label: "Notifications", icon:'pi pi-fw pi-bell', to: "/notifications" },
+            ],
+            accountMenu: [{
+                items: [
+                    { label: "Profile", icon: 'pi pi-fw pi-user'},
+                    { label: "Sign out", icon: 'pi pi-fw pi-sign-out' },
+                ]
+            }
             ]
+        }
+    },
+    methods: {
+        toggleMenu(){
+            
         }
     }
 }
@@ -47,5 +60,20 @@ export default{
 </script>
 
 <style>
+.p-menubar-end{
+    width:100%;
+}
 
+.profile > div{
+    padding:0px;
+    border:0;
+}
+@media only screen and (max-width: 992px) {
+  .p-menubar-start{
+      width: 100% !important;
+  }
+  .search-input{
+      display:none;
+  }
+}
 </style>
