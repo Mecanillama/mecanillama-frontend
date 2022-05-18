@@ -5,7 +5,7 @@
     </div>
     <div class="col-12 md:col-6 p-0 flex justify-content-center">
         <div class="flex flex-column align-items-center justify-content-center" style="max-width: 26rem;">
-        <h1 class="text-center text-6xl my-7">Welcome again!</h1>
+        <h1 class="text-center text-6xl my-7 font-bold">Welcome again!</h1>
         <div class="m-3 text-center">
             <div class="px-3">
                 <span class="p-float-label">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div>
-            <span>Forgot password?</span>
+            <span class="font-semibold">Forgot password?</span>
         </div>
         <div class="text-xl flex flex-column m-3">
             <div class="field-radiobutton w-full">
@@ -43,7 +43,7 @@
         </div>
     <div>
         <span>Don't have an account? </span>
-        <a href="">Sign up!</a>
+        <a href="" class="font-semibold">Sign up!</a>
     </div>
 
 
