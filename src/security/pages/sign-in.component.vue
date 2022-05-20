@@ -34,7 +34,7 @@
         </div>
     <div>
         <span>Don't have an account? </span>
-        <a href="" class="font-semibold">Sign up!</a>
+        <a href="/sign-up" class="font-semibold">Sign up!</a>
     </div>
 
 
