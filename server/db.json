@@ -6,6 +6,51 @@
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
     "profile": { "name": "typicode" },
+    "drivers": [
+      {
+        "id": 10,
+        "name": "Ron Weasley"
+      },
+      {
+        "id": 11,
+        "name": "Arthur Weasley"
+      }
+    ],
+    "workshops": [
+      
+      {
+        "mechanic": "Fast Car",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Lima"
+      },
+      {
+        "mechanic": "Formula 1",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Bogota"
+      },
+      {
+        "mechanic": "Formula 1",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Bogota"
+      },
+      {
+        "mechanic": "Formula 1",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Bogota"
+      },
+      {
+        "mechanic": "Formula 1",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Bogota"
+      },
+      {
+        "mechanic": "Formula 1",
+        "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+        "location": "Bogota"
+      }
+
+    ],
+
     "appointments": [
       {
         "id": 1,

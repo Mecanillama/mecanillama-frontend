@@ -25,6 +25,7 @@ import ToastService from "primevue/toastservice";
 import RadioButton from 'primevue/radiobutton';
 import Avatar from 'primevue/avatar';
 import Password from 'primevue/password';
+import Carousel from 'primevue/carousel';
 
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
@@ -55,4 +56,5 @@ app.component("menu-bar", MenuBar);
 app.component('pv-radio-button', RadioButton);
 app.component('pv-avatar', Avatar);
 app.component('pv-password', Password);
+app.component('pv-carousel', Carousel);
 app.mount('#app')
