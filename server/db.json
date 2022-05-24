@@ -6,7 +6,9 @@
     {
       "id": 1,
       "rating": 3,
-      "publisher": "Amazon",
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "Audi A4",
       "body": "some comment",
       "postId": 1
     }

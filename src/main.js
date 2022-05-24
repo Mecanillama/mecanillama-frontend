@@ -26,6 +26,7 @@ import RadioButton from 'primevue/radiobutton';
 import Avatar from 'primevue/avatar';
 import Password from 'primevue/password';
 import Carousel from 'primevue/carousel';
+import Rating from 'primevue/rating';
 
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
@@ -57,4 +58,5 @@ app.component('pv-radio-button', RadioButton);
 app.component('pv-avatar', Avatar);
 app.component('pv-password', Password);
 app.component('pv-carousel', Carousel);
+app.component('pv-rating', Rating);
 app.mount('#app')

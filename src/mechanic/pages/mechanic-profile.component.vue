@@ -78,6 +78,45 @@
         </span>
       </div>
       <div class="flex flex-column">
+        <ul style="list-style: none">
+          <li v-for="review in reviews" :key="review.id">
+            <div class="grid box-review p-5">
+              <div class="col flex flex-column justify-content-center m-2">
+                <p class="font-semibold p-2">{{ review.publisher }}</p>
+                <span clas="p-2"
+                  ><i class="pi pi-car p-2"></i>{{ review.car }}</span
+                >
+              </div>
+              <div class="col">
+                <div class="grid align-items-center p-2">
+                  <!--
+                  <span class="">
+                    <i class="pi pi-star-fill"></i>
+                    <i class="pi pi-star-fill"></i>
+                    <i class="pi pi-star-fill"></i>
+                    <i class="pi pi-star-fill"></i>
+                    <i class="pi pi-star-fill"></i>
+                  </span>
+                  -->
+
+                  <pv-rating
+                    :modelValue="review.rating"
+                    :readonly="true"
+                    :cancel="false"
+                  />
+
+                  <span class="font-semibold pl-6" style="font-size: 1.1rem">
+                    {{ review.date }}
+                  </span>
+                </div>
+                <p>
+                  {{ review.body }}
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
         <div class="grid box-review p-5">
           <div class="col flex flex-column justify-content-center m-2">
             <p class="font-semibold p-2">Sirius Black</p>
@@ -170,16 +209,14 @@
 </template>
 
 <script>
-
 import generalHeaderComponent from "../../components/general-header.component.vue";
 //aca abajo hay error
-//import {MechanicsProfileApiService}  from "../services/mechanic-profile.service";
+import { MechanicsProfileApiService } from "../services/mechanics-profile.service";
 
 export default {
   name: "mechanic-profile",
   component: {
     generalHeaderComponent,
-
   },
   data() {
     return {
@@ -189,10 +226,11 @@ export default {
     };
   },
   created() {
-    //this.reviewsService = new MechanicsProfileApiService();
-    //this.reviewsService.getAll().then((response) => {
-    //  this.reviews = response.data;
-    //});
+    this.reviewsService = new MechanicsProfileApiService();
+    this.reviewsService.getAll().then((response) => {
+      this.reviews = response.data;
+      console.log(this.reviews);
+    });
   },
   methods: {
     initFilters() {
@@ -211,7 +249,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .pi-star-fill {
   color: #e98b2f;
   padding: 10px;
@@ -226,5 +264,12 @@ export default {
 
 .box-review {
   border-bottom: 1px solid #dae1e7;
+}
+
+::v-deep() {
+    .p-rating .p-rating-star {
+        height: 500px;
+    }
+
 }
 </style>
