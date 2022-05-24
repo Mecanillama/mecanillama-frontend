@@ -1,5 +1,4 @@
 <template>
-    <general-header-component></general-header-component>
         <div>
             <div class="m-6">
                 <pv-toolbar class="mb-4">

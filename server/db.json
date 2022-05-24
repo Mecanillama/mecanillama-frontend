@@ -1,7 +1,5 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
+  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
   "reviews": [
     {
       "id": 1,
@@ -10,7 +8,25 @@
       "publisher": "primer nombre",
       "car": "Audi A4",
       "body": "some comment",
-      "postId": 1
+      "workshopId": 1
+    },
+    {
+      "id": 2,
+      "rating": 2,
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "BMW X5",
+      "body": "some comment",
+      "workshopId": 2
+    },
+    {
+      "id": 3,
+      "rating": 1,
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "Honda Civic",
+      "body": "some comment",
+      "workshopId": 3
     }
   ],
   "profile": { "name": "typicode" },
@@ -25,38 +41,27 @@
     }
   ],
   "workshops": [
-    
     {
-      "mechanic": "Fast Car",
+      "id": 1,
+      "name": "Fast Car",
+      "phone": "123456789",
       "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
       "location": "Lima"
     },
     {
-      "mechanic": "Formula 1",
+      "id": 2,
+      "name": "Formula 1",
+      "phone": "123456789",
       "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
       "location": "Bogota"
     },
     {
-      "mechanic": "Formula 1",
+      "id": 3,
+      "name": "Formula 2",
+      "phone": "123456789",
       "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Bogota"
-    },
-    {
-      "mechanic": "Formula 1",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Bogota"
-    },
-    {
-      "mechanic": "Formula 1",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Bogota"
-    },
-    {
-      "mechanic": "Formula 1",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Bogota"
+      "location": "Santiago"
     }
-
   ],
 
   "appointments": [

@@ -1,5 +1,6 @@
 <template>
   <general-header-component></general-header-component>
+
   <div class="m-6">
     <div class="grid">
       <div class="col text-center">
@@ -117,35 +118,7 @@
           </li>
         </ul>
 
-        <div class="grid box-review p-5">
-          <div class="col flex flex-column justify-content-center m-2">
-            <p class="font-semibold p-2">Sirius Black</p>
-            <span clas="p-2"
-              ><i class="pi pi-car p-2"></i>2022 Mercedes-Benz C-Class</span
-            >
-          </div>
-          <div class="col">
-            <div class="grid align-items-center p-2">
-              <span class="">
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-              </span>
-              <span class="font-semibold pl-6" style="font-size: 1.1rem">
-                05/20/2022
-              </span>
-            </div>
-            <p>
-              Josh is awesome. He actually had us leave our car at his home in
-              Henrietta and drove it to the shop and back himself since it's far
-              for us to drive. He did my tires and brakes for a great price and
-              had it ready the next day.
-            </p>
-          </div>
-        </div>
-
+        <!--
         <div class="grid box-review p-5">
           <div class="col flex flex-column justify-content-center m-2">
             <p class="font-semibold p-2">Ludo Bagman</p>
@@ -173,36 +146,7 @@
             </p>
           </div>
         </div>
-
-        <div class="grid box-review p-5">
-          <div class="col flex flex-column justify-content-center m-2">
-            <p class="font-semibold p-2">Severus Snape</p>
-            <span clas="p-2"
-              ><i class="pi pi-car p-2"></i>2022 Mercedes-Benz C-Class</span
-            >
-          </div>
-          <div class="col">
-            <div class="grid align-items-center p-2">
-              <span class="">
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-              </span>
-              <span class="font-semibold pl-6" style="font-size: 1.1rem">
-                05/20/2022
-              </span>
-            </div>
-            <p>
-              Great experience. As a wizard that knows nothing about vehicles I
-              always feel uncomfortable at auto repair places. This was NOT the
-              case here. They treated me kindly, explained things clearly, etc.
-              I've already booked my next appointment with them! Highly
-              recommended
-            </p>
-          </div>
-        </div>
+        -->
       </div>
     </div>
   </div>
@@ -210,7 +154,6 @@
 
 <script>
 import generalHeaderComponent from "../../components/general-header.component.vue";
-//aca abajo hay error
 import { MechanicsProfileApiService } from "../services/mechanics-profile.service";
 
 export default {
@@ -267,9 +210,8 @@ export default {
 }
 
 ::v-deep() {
-    .p-rating .p-rating-star {
-        height: 500px;
-    }
-
+  .p-rating .p-rating-star {
+    height: 500px;
+  }
 }
 </style>

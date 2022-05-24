@@ -1,37 +1,38 @@
 <template>
-    <RouterView />
+  <header-component></header-component>
+  <RouterView />
 </template>
 
 <script>
-import HomeView from './views/HomeView.vue';
-import headerComponent from './components/general-header.component.vue';
-export default{
-  name: 'app',
-    components: {
-      HomeView,
-      headerComponent
-    }
-}
+import HomeView from "./views/HomeView.vue";
+import headerComponent from "./components/general-header.component.vue";
+export default {
+  name: "app",
+  components: {
+    HomeView,
+    headerComponent,
+  },
+};
 </script>
 
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 #app {
   margin: 0 auto;
   font-weight: normal;
 }
 
-.button{
+.button {
   padding: 26px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-direction: column;
 }
@@ -53,5 +54,4 @@ nav a.router-link-exact-active:hover {
 nav a:first-of-type {
   border: 0;
 }
-
 </style>

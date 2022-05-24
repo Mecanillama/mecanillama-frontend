@@ -1,5 +1,4 @@
 <template>
-<general-header-component></general-header-component>
         <div class="card m-4">
             <pv-carousel :value="workshops" :numVisible="3" :numScroll="3" :responsiveOptions="responsiveOptions">
                 <template #header>
