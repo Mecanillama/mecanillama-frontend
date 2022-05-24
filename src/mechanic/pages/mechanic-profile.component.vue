@@ -1,6 +1,6 @@
 <template>
   <general-header-component></general-header-component>
-
+  <pv-dropdown></pv-dropdown>
   <div class="m-6">
     <div class="grid">
       <div class="col text-center">
@@ -154,7 +154,8 @@
 
 <script>
 import generalHeaderComponent from "../../components/general-header.component.vue";
-import { MechanicsProfileApiService } from "../services/mechanics-profile.service";
+import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
+import { MechanicsProfileApiService } from "../services/mechanics-api.service";
 
 export default {
   name: "mechanic-profile",
@@ -164,23 +165,17 @@ export default {
   data() {
     return {
       reviews: [],
-      filters: {},
       reviewsService: null,
     };
   },
   created() {
-    this.reviewsService = new MechanicsProfileApiService();
+    this.reviewsService = new ReviewsApiService();
     this.reviewsService.getAll().then((response) => {
       this.reviews = response.data;
       console.log(this.reviews);
     });
   },
   methods: {
-    initFilters() {
-      this.filters = {
-        global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-      };
-    },
     //crud
     createReview() {
       this.reviewsService.create(this.review).then((response) => {
