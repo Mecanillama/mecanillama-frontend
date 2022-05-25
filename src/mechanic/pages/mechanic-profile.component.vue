@@ -144,6 +144,47 @@
         </div>
         -->
       </div>
+      <div class="flex flex-column" style="max-width: 500px">
+        <pv-rating
+          v-model="rating"
+          :modelValue="5"
+          @click="newMethod"
+          :cancel="false"
+        />
+        <pv-textarea
+          v-model="body"
+          :autoResize="true"
+          rows="5"
+          cols="50"
+          maxlength="500"
+          :placeholder="'Enter your review here'"
+          required="true"
+        />
+        <div
+          :class="{
+            'review-alert': field == true,
+            'review-alert-disabled': field == false,
+          }"
+        >
+          <h3>Please fill out all fields</h3>
+        </div>
+        <span class="p-buttonset">
+          <pv-button
+            label="Reset"
+            class="p-button-danger"
+            icon="pi pi-times"
+            iconPos="right"
+            @click="resetComment"
+          />
+          <pv-button
+            class="mt-2"
+            label="Submit"
+            icon="pi pi-check"
+            iconPos="right"
+            @click="addComment"
+          />
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -160,6 +201,10 @@ export default {
   },
   data() {
     return {
+      rating: null,
+      body: null,
+      field: false,
+
       mechanics: [],
       selectedMechanic: {},
       reviews: [],
@@ -188,6 +233,17 @@ export default {
           this.reviews = response.data;
         });
     },
+    addComment() {
+      if (this.rating == null || this.body == null) this.field = true;
+      else {
+        console.log(this.rating, this.body);
+        this.field = false;
+      }
+    },
+    resetComment() {
+      this.rating = null;
+      this.body = null;
+    },
   },
 };
 </script>
@@ -213,5 +269,15 @@ export default {
   .p-rating .p-rating-star {
     height: 500px;
   }
+}
+
+.review-alert {
+  color: red;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+.review-alert-disabled {
+  display: none;
 }
 </style>

@@ -27,6 +27,7 @@ import Avatar from 'primevue/avatar';
 import Password from 'primevue/password';
 import Carousel from 'primevue/carousel';
 import Rating from 'primevue/rating';
+import Textarea from 'primevue/textarea';
 
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
@@ -59,4 +60,5 @@ app.component('pv-avatar', Avatar);
 app.component('pv-password', Password);
 app.component('pv-carousel', Carousel);
 app.component('pv-rating', Rating);
+app.component('pv-textarea', Textarea);
 app.mount('#app')
