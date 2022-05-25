@@ -187,7 +187,7 @@ import { MechanicsProfileApiService } from "../services/mechanics-api.service";
 
 export default {
   name: "mechanic-profile",
-  component: {
+  components: {
     generalHeaderComponent,
   },
   data() {
