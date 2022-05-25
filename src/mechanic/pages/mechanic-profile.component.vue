@@ -4,7 +4,7 @@
     v-model="selectedMechanic"
     :options="mechanics"
     optionLabel="name"
-    v-on:change="updateMechanic"
+    v-on:change="updateSelectedMechanic"
   ></pv-dropdown>
   <div class="m-6">
     <div class="grid">
@@ -24,13 +24,13 @@
           main-description
         "
       >
-        <h2 class="font-bold text-4xl">{{selectedMechanic.name}}</h2>
+        <h2 class="font-bold text-4xl">{{ selectedMechanic.name }}</h2>
         <span>
           <span class=""> <i class="pi pi-star-fill"></i></span>
           47 reviews
         </span>
-        <p>{{selectedMechanic.location}}</p>
-        <p class="font-semibold">{{selectedMechanic.phone}}</p>
+        <p>{{ selectedMechanic.location }}</p>
+        <p class="font-semibold">{{ selectedMechanic.phone }}</p>
         <pv-button>Make an appointment</pv-button>
       </div>
     </div>
@@ -48,7 +48,7 @@
       <h2 class="font-semibold text-2xl">About</h2>
       <div>
         <p>
-          {{selectedMechanic.description}}
+          {{ selectedMechanic.description }}
         </p>
       </div>
     </div>
@@ -170,25 +170,24 @@ export default {
   created() {
     this.reviewsService = new ReviewsApiService();
     this.mechanicsService = new MechanicsProfileApiService();
-    this.reviewsService.getAll().then((response) => {
-      this.reviews = response.data;
-    });
     this.mechanicsService.getAll().then((response) => {
       this.mechanics = response.data;
       this.selectedMechanic = this.mechanics[0];
+      this.reviewsService
+        .findByMechanicId(this.selectedMechanic.id)
+        .then((response) => {
+          this.reviews = response.data;
+        });
     });
   },
   methods: {
-    //crud
-    createReview() {
-      this.reviewsService.create(this.review).then((response) => {
-        this.reviews.push(response.data);
-        this.review = {};
-      });
+    updateSelectedMechanic() {
+      this.reviewsService
+        .findByMechanicId(this.selectedMechanic.id)
+        .then((response) => {
+          this.reviews = response.data;
+        });
     },
-    updateMechanic() {
-      console.log(this.selectedMechanic);
-    }
   },
 };
 </script>
