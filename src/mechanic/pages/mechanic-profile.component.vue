@@ -1,6 +1,11 @@
 <template>
   <general-header-component></general-header-component>
-  <pv-dropdown></pv-dropdown>
+  <pv-dropdown
+    v-model="selectedMechanic"
+    :options="mechanics"
+    optionLabel="name"
+    v-on:change="updateMechanic"
+  ></pv-dropdown>
   <div class="m-6">
     <div class="grid">
       <div class="col text-center">
@@ -19,13 +24,13 @@
           main-description
         "
       >
-        <h2 class="font-bold text-4xl">Fast Car</h2>
+        <h2 class="font-bold text-4xl">{{selectedMechanic.name}}</h2>
         <span>
           <span class=""> <i class="pi pi-star-fill"></i></span>
           47 reviews
         </span>
-        <p>Prolongación Primavera 2390, Monterrico, Santiago de Surco</p>
-        <p class="font-semibold">(585) 312-3611</p>
+        <p>{{selectedMechanic.location}}</p>
+        <p class="font-semibold">{{selectedMechanic.phone}}</p>
         <pv-button>Make an appointment</pv-button>
       </div>
     </div>
@@ -43,16 +48,7 @@
       <h2 class="font-semibold text-2xl">About</h2>
       <div>
         <p>
-          Looking to book a car service or MOT? Fast Car has hundreds of
-          professional car service centres and MOT testing stations located all
-          over the UK, from London to Manchester, Birmingham and Glasgow, so
-          you'll be sure to find a garage near you.This location features a team
-          of automotive technicians whose commitment to ongoing training and ASE
-          Certifications ranks with the best. An investment in the necessary
-          tools and diagnostic equipment helps make them capable of repairs
-          ranging from tires and wheel alignment, to minor and major mechanical
-          repairs, to check engine light diagnosis and repair, as well as your
-          scheduled maintenance needs.
+          {{selectedMechanic.description}}
         </p>
       </div>
     </div>
@@ -164,15 +160,22 @@ export default {
   },
   data() {
     return {
+      mechanics: [],
+      selectedMechanic: {},
       reviews: [],
       reviewsService: null,
+      mechanicsService: null,
     };
   },
   created() {
     this.reviewsService = new ReviewsApiService();
+    this.mechanicsService = new MechanicsProfileApiService();
     this.reviewsService.getAll().then((response) => {
       this.reviews = response.data;
-      console.log(this.reviews);
+    });
+    this.mechanicsService.getAll().then((response) => {
+      this.mechanics = response.data;
+      this.selectedMechanic = this.mechanics[0];
     });
   },
   methods: {
@@ -183,6 +186,9 @@ export default {
         this.review = {};
       });
     },
+    updateMechanic() {
+      console.log(this.selectedMechanic);
+    }
   },
 };
 </script>
