@@ -168,22 +168,13 @@
         >
           <h3>Please fill out all fields</h3>
         </div>
-        <span class="p-buttonset">
-          <pv-button
-            label="Reset"
-            class="p-button-danger"
-            icon="pi pi-times"
-            iconPos="right"
-            @click="resetComment"
-          />
-          <pv-button
-            class="mt-2"
-            label="Submit"
-            icon="pi pi-check"
-            iconPos="right"
-            @click="addComment"
-          />
-        </span>
+        <pv-button
+          class="mt-2"
+          label="Submit"
+          icon="pi pi-check"
+          iconPos="right"
+          @click="addComment"
+        />
       </div>
     </div>
   </div>
@@ -204,6 +195,14 @@ export default {
       rating: null,
       body: null,
       field: false,
+      newReview: {
+        rating: null,
+        body: null,
+        car: "car test",
+        publisher: "name test",
+        date: "date test",
+        workshopId: null,
+      },
 
       mechanics: [],
       selectedMechanic: {},
@@ -238,11 +237,15 @@ export default {
       else {
         console.log(this.rating, this.body);
         this.field = false;
+        this.newReview.rating = this.rating;
+        this.newReview.body = this.body;
+        this.newReview.workshopId = this.selectedMechanic.id;
+        this.reviewsService.create(this.newReview).then((response) => {
+          this.reviews.push(response.data);
+        });
+        this.rating = null;
+        this.body = null;
       }
-    },
-    resetComment() {
-      this.rating = null;
-      this.body = null;
     },
   },
 };

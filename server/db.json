@@ -1,5 +1,11 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
   "reviews": [
     {
       "id": 1,
@@ -29,7 +35,9 @@
       "workshopId": 3
     }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "name": "typicode"
+  },
   "drivers": [
     {
       "id": 10,
@@ -63,7 +71,6 @@
       "location": "Santiago"
     }
   ],
-
   "appointments": [
     {
       "id": 1,
