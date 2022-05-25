@@ -1,5 +1,4 @@
 <template>
-  <header-component></header-component>
   <RouterView />
 </template>
 

@@ -33,6 +33,15 @@
       "car": "Honda Civic",
       "body": "some comment",
       "workshopId": 3
+    },
+    {
+      "rating": 3,
+      "body": "comentario en id 1 con 3 estrellas",
+      "car": "car test",
+      "publisher": "name test",
+      "date": "date test",
+      "workshopId": 1,
+      "id": 4
     }
   ],
   "profile": {
