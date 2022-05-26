@@ -129,5 +129,12 @@
       "time": "14:00",
       "finished": true
     }
+  ],
+  "users": [
+    {
+      "email": "john.doe@gmail.com",
+      "password": "$2a$10$ZIBqyYiL0iVNbHuX/9b7jeiEFxZYbfLNqw4g/yk76/WqkUtNoS1h2",
+      "id": 1
+    }
   ]
 }

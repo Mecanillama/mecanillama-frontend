@@ -6,33 +6,44 @@
     <div class="col-12 md:col-6 p-0 flex justify-content-center">
         <div class="flex flex-column align-items-center justify-content-center" style="max-width: 26rem;">
         <h1 class="text-center text-6xl my-7 font-bold">Join us!</h1>
-        <div class="m-3 text-center">
-            <div class="px-3">
-                <span class="p-float-label">
-                    <pv-input-text />
-                    <label for="username">Username</label>
-                </span>
-            </div>
-        </div>
 
-        <div class="m-3 text-center">
-            <div class="px-3">
-                <span class="p-float-label">
-                    <pv-input-text type="password" />
-                    <label for="password">Password</label>
-                </span>
+        <form @submit.prevent="submit">
+            <div class="m-3 text-center">
+                <div class="px-3">
+                    <span class="p-float-label">
+                        <pv-input-text v-model="name" />
+                        <label for="name">Name</label>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="button w-full text-center my-5">
-                <RouterLink to="/home-customer">
-                    <pv-button class="w-full" label = "Sign Up" />
-                </RouterLink>
-        </div>
+
+            <div class="m-3 text-center">
+                <div class="px-3">
+                    <span class="p-float-label">
+                        <pv-input-text v-model="email" />
+                        <label for="email">Email</label>
+                    </span>
+                </div>
+            </div>
+
+            <div class="m-3 text-center">
+                <div class="px-3">
+                    <span class="p-float-label">
+                        <pv-input-text type="password" v-model="password" />
+                        <label for="password">Password</label>
+                    </span>
+                </div>
+            </div>
+            <div class="button w-full text-center my-5">
+                    <RouterLink to="/home-customer">
+                        <pv-button type="submit" class="w-full" label = "Sign Up"/>
+                    </RouterLink>
+            </div>
+        </form>
     <div>
         <span>Already have an account? </span>
         <a href="/sign-in" class="font-semibold">Sign in!</a>
     </div>
-
 
         </div>
     </div>
@@ -40,12 +51,30 @@
 </template>
 
 <script>
+
+import {reactive} from 'vue';
+
 export default {    
     name: 'signup',
-    data(){
+
+    setup(){
+        const data = reactive({
+            name:'',
+            email: '',
+            password:''
+        });
+
+        const submit = async () => {
+            await fetch('http://localhost:3000/api/v1/auth/sign-up', {
+            method: 'POST',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+            });
+        }
+
         return{
-            user:null,
-            value:null
+            data,
+            submit
         }
     },
     methods: {
