@@ -2,21 +2,21 @@ import http from "../../core/services/http-common";
 
 export class AppointmentsApiService {
     getAll() {
-      return http.get("http://localhost:3000/appointments");
+      return http.get("/appointments");
     }
     getById(id) {
-      return http.get(`http://localhost:3000/appointments/${id}`);
+      return http.get(`/appointments/${id}`);
     }
     create(data) {
-      return http.post("http://localhost:3000/appointments", data);
+      return http.post("/appointments", data);
     }
     update(id, data) {
-      return http.put(`http://localhost:3000/appointments${id}`, data);
+      return http.put(`/appointments${id}`, data);
     }
     delete(id) {
-      return http.delete(`http://localhost:3000/appointments${id}`);
+      return http.delete(`/appointments${id}`);
     }
     findByCustomer(customer) {
-      return http.get(`http://localhost:3000/appointments?customer=${customer}`);
+      return http.get(`/appointments?customer=${customer}`);
     }
   }
