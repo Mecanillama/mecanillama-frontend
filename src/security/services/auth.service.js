@@ -13,9 +13,9 @@ class AuthService {
     signIn(user){
         return http.post(API_URL_SIGNIN, user);
     }
-
-    // getCurrentUser(){
-    //     return localStorage.getItem('currentUser')
-    // }
+    // Get Current User
+    getCurrentUser() {
+        return localStorage.getItem("user");
+      }
 }
 export default new AuthService();

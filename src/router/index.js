@@ -59,6 +59,11 @@ const router = createRouter({
       name: 'appointments-mechanic',
       component: () => import('../appointments/pages/appointments-mechanic.component.vue')
     },
+    {
+      path:'/customer-profile',
+      name: 'customer-profile',
+      component: () => import('../customer/pages/customer-profile.component.vue')
+    },
 
 
   ]
