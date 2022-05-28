@@ -34,6 +34,16 @@
                     </span>
                 </div>
             </div>
+
+            <div class="m-3 text-center">
+                <div class="px-3">
+                    <span class="p-float-label">
+                        <pv-dropdown required v-model="role" :options="roles" optionLabel="name" placeholder="Select a Role" ></pv-dropdown>
+                    </span>
+                </div>
+            </div>
+
+
             <div class="button w-full text-center my-5">
                     <pv-button type="submit" class="w-full" label = "Sign Up"></pv-button>
             </div>
@@ -56,7 +66,12 @@ export default {
         return{
             name: null,
             email: null,
-            password: null
+            password: null,
+            role: null,
+            roles: [
+			{name: 'Mechanic', value: 'mechanic'},
+			{name: 'Driver', code: 'driver'},
+        ]
         };
     },
 
@@ -75,21 +90,23 @@ export default {
             return{
                 name: this.name,
                 email: this.email,
-                password: this.password
+                password: this.password,
+                role: this.role,
             };
         },
 
         async submit(){
             const newUser = this.createUser();
             await this.signUpUser(JSON.stringify(newUser));
-            this.resetForm();
             this.$router.push("/sign-in");
+            this.resetForm();
         },
 
         resetForm(){
             this.name = null;
             this.email = null;
             this.password = null;
+            this.role = null;
         },  
     },
 };

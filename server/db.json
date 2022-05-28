@@ -182,6 +182,16 @@
       "password": "$2a$10$IChjFfiDXNok5P5ri88ti.G1icuF52Q4cdt2devPcPk5hsHRwonYa",
       "name": "asdkfkasdf",
       "id": 9
+    },
+    {
+      "email": "jesus@amen.com",
+      "password": "$2a$10$f10K9/cU8dx3ym1Bfa.sfOxSEFYcGaXTCuTJq5cKybkDGs9y/7/tm",
+      "name": "jesus de nazareth",
+      "role": {
+        "name": "Mechanic",
+        "value": "mechanic"
+      },
+      "id": 10
     }
   ]
 }
