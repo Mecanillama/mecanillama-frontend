@@ -1,16 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: 'home-view'
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
     {
-      path: '/about',
+      path: "/about",
       name: 'about',
       component: AboutView
     },
@@ -33,11 +38,6 @@ const router = createRouter({
       path: '/home-customer',
       name: 'home-customer',
       component: () => import('../customer/pages/home-customer.component.vue')
-    },
-    {
-      path: '/home-mechanic',
-      name: 'home-mechanic',
-      component: () => import('../mechanic/pages/home-mechanic.component.vue')
     },
     {
       path: '/mechanic-profile',

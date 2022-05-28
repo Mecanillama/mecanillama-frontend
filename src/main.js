@@ -12,6 +12,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
+import MenuBar from "primevue/menubar";
 import InputText from "primevue/inputtext";
 import Sidebar from "primevue/sidebar";
 import Row from "primevue/row";
