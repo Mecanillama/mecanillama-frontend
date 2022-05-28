@@ -144,6 +144,7 @@
         </div>
         -->
       </div>
+      
       <div class="flex flex-column" style="max-width: 500px">
         <pv-rating
           v-model="rating"
@@ -176,6 +177,9 @@
           @click="addComment"
         />
       </div>
+
+      <!--<review-component></review-component>-->
+
     </div>
   </div>
 </template>
@@ -184,11 +188,14 @@
 import generalHeaderComponent from "../../components/general-header.component.vue";
 import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
 import { MechanicsProfileApiService } from "../services/mechanics-api.service";
+import reviewComponent from "../../reviews/pages/review.component.vue";
 
 export default {
+  components: { reviewComponent },
   name: "mechanic-profile",
   component: {
     generalHeaderComponent,
+    reviewComponent,
   },
   data() {
     return {
