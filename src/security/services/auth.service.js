@@ -1,33 +1,12 @@
 import axios from "axios";
+import http from "../../core/services/http-common";
 
-const API_URL = "http://localhost:3000/api/v1/auth/";
+
+const API_URL = "http://localhost:3000/api/v1/auth/sign-up";
 
 class AuthService {
-    login(user) {
-        return axios
-        .post(API_URL, {
-            username: user.username,
-            password: user.password,
-        })
-        .then((response) => {
-            if (response.data.token) {
-            console.log("user:" + response.data);
-            localStorage.setItem("user", JSON.stringify(response.data));
-            }
-            return response.data;
-        });
-    }
-
-    logout() {
-        localStorage.removeItem("user");
-    }
-    register(user) {
-        return axios.post(API_URL + "sign-up", {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        username: user.username,
-        password: user.password,
-        });
+    signUp(user) {
+        return http.post(API_URL, user);
     }
 }
 export default new AuthService();

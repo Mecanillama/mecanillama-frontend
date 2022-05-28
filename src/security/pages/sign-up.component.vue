@@ -11,7 +11,7 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text v-model="name" />
+                        <pv-input-text v-model="name"></pv-input-text>
                         <label for="name">Name</label>
                     </span>
                 </div>
@@ -20,7 +20,7 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text v-model="email" />
+                        <pv-input-text v-model="email"></pv-input-text>
                         <label for="email">Email</label>
                     </span>
                 </div>
@@ -29,15 +29,13 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text type="password" v-model="password" />
+                        <pv-input-text type="password" v-model="password"></pv-input-text>
                         <label for="password">Password</label>
                     </span>
                 </div>
             </div>
             <div class="button w-full text-center my-5">
-                    <RouterLink to="/home-customer">
-                        <pv-button type="submit" class="w-full" label = "Sign Up"/>
-                    </RouterLink>
+                    <pv-button type="submit" class="w-full" label = "Sign Up"></pv-button>
             </div>
         </form>
     <div>
@@ -51,36 +49,54 @@
 </template>
 
 <script>
-
-import {reactive} from 'vue';
+import AuthService from '../../security/services/auth.service.js'
 
 export default {    
-    name: 'signup',
-
-    setup(){
-        const data = reactive({
-            name:'',
-            email: '',
-            password:''
-        });
-
-        const submit = async () => {
-            await fetch('http://localhost:3000/api/v1/auth/sign-up', {
-            method: 'POST',
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-            });
-        }
-
+    name: 'sign-up',
+    data:() => {
         return{
-            data,
-            submit
-        }
+            name: null,
+            email: null,
+            password: null
+        };
     },
+
     methods: {
-        
-    }
-}
+        async signUpUser(newUser){
+            await AuthService.signUp(newUser)
+                .then((response) => {
+                    localStorage.setItem("user", JSON.stringify(response.data.user));
+                    localStorage.setItem(
+                        "accessToken",
+                        JSON.stringify(response.data.accessToken));
+            })
+            .catch((error) => {
+                this.errors.push(error);
+            });
+        },
+
+        createUser(){
+            return{
+                name: this.name,
+                email: this.email,
+                password: this.password
+            };
+        },
+
+        async submit(){
+            const newUser = this.createUser();
+            await this.signUpUser(JSON.stringify(newUser));
+            this.resetForm();
+            this.$router.push("/home-customer");
+        },
+
+        resetForm(){
+            this.name = null;
+            this.email = null;
+            this.password = null;
+        },  
+    },
+};
 </script>
 
 <style>

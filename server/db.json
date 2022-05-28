@@ -135,6 +135,41 @@
       "email": "john.doe@gmail.com",
       "password": "$2a$10$ZIBqyYiL0iVNbHuX/9b7jeiEFxZYbfLNqw4g/yk76/WqkUtNoS1h2",
       "id": 1
+    },
+    {
+      "email": "renzo@gmail.com",
+      "password": "$2a$10$NqO1hJeRZt5VDYnBgIeU3OS5CeUKIpHBc4e7nlorQHcW/GN3H0RYm",
+      "id": 2
+    },
+    {
+      "email": "jaja@gmail.com",
+      "password": "$2a$10$LlLNARl4vJfXeOliYyWoDe6882hKb07d8kyqIdIjCDColZ0PQHjmq",
+      "name": "jaja",
+      "id": 3
+    },
+    {
+      "email": "mario@bros.com",
+      "password": "$2a$10$P/40jJr3qQ2j2LONnuqwcOssaNivDKIGM0ZIyxPWx9wApQfnoBX8m",
+      "name": "mario",
+      "id": 4
+    },
+    {
+      "email": "hahaha@gmail.com",
+      "password": "$2a$10$w6QZjmDdtFaEocOhsbkcLeWF90PgoeWDgj8UFFKKvnepIlEfjMxvO",
+      "name": "hahaha",
+      "id": 5
+    },
+    {
+      "email": "no@si.com",
+      "password": "$2a$10$zCnEfl1M2HAeIVzI.B3KDuSZqi24VFTwQcVXHX/fyjfFgOErURbnO",
+      "name": "xdxdxd",
+      "id": 6
+    },
+    {
+      "email": "huhuhu@huhuh.com",
+      "password": "$2a$10$B9Vu3HgSbJg0DSyODGpyyO/l8AEFZTA8ewqMq4P7H1zcSibhrWm0m",
+      "name": "huhuu",
+      "id": 7
     }
   ]
 }
