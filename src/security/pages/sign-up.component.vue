@@ -42,7 +42,6 @@
         <span>Already have an account? </span>
         <a href="/sign-in" class="font-semibold">Sign in!</a>
     </div>
-
         </div>
     </div>
 </div>
@@ -65,10 +64,7 @@ export default {
         async signUpUser(newUser){
             await AuthService.signUp(newUser)
                 .then((response) => {
-                    localStorage.setItem("user", JSON.stringify(response.data.user));
-                    localStorage.setItem(
-                        "accessToken",
-                        JSON.stringify(response.data.accessToken));
+                    console.log(response.data.user)
             })
             .catch((error) => {
                 this.errors.push(error);
@@ -87,7 +83,7 @@ export default {
             const newUser = this.createUser();
             await this.signUpUser(JSON.stringify(newUser));
             this.resetForm();
-            this.$router.push("/home-customer");
+            this.$router.push("/sign-in");
         },
 
         resetForm(){

@@ -170,6 +170,18 @@
       "password": "$2a$10$B9Vu3HgSbJg0DSyODGpyyO/l8AEFZTA8ewqMq4P7H1zcSibhrWm0m",
       "name": "huhuu",
       "id": 7
+    },
+    {
+      "email": "pedro@gmail.com",
+      "password": "$2a$10$eee44qVRtDsCndZ5kzAtr.2CpkwlFp/Y6pt.mxNgBe3ns26a/pg3y",
+      "name": "pedro",
+      "id": 8
+    },
+    {
+      "email": "renadfajsdk@gmail.com",
+      "password": "$2a$10$IChjFfiDXNok5P5ri88ti.G1icuF52Q4cdt2devPcPk5hsHRwonYa",
+      "name": "asdkfkasdf",
+      "id": 9
     }
   ]
 }
