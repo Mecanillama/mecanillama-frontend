@@ -16,6 +16,12 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
+## Start Json-Server
+
+```sh
+json-server .\server\db.json --routes .\server\routes.json
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh

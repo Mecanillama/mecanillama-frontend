@@ -1,9 +1,133 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 3,
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "Audi A4",
+      "body": "some comment",
+      "workshopId": 1
+    },
+    {
+      "id": 2,
+      "rating": 2,
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "BMW X5",
+      "body": "some comment",
+      "workshopId": 2
+    },
+    {
+      "id": 3,
+      "rating": 1,
+      "date": "2022-09-03",
+      "publisher": "primer nombre",
+      "car": "Honda Civic",
+      "body": "some comment",
+      "workshopId": 3
+    },
+    {
+      "rating": 3,
+      "body": "comentario en id 1 con 3 estrellas",
+      "car": "car test",
+      "publisher": "name test",
+      "date": "date test",
+      "workshopId": 1,
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "drivers": [
+    {
+      "id": 10,
+      "name": "Ron Weasley"
+    },
+    {
+      "id": 11,
+      "name": "Arthur Weasley"
+    }
+  ],
+  "workshops": [
+    {
+      "id": 1,
+      "name": "Fast Car",
+      "phone": "123456789",
+      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+      "location": "Lima"
+    },
+    {
+      "id": 2,
+      "name": "Formula 1",
+      "phone": "123456789",
+      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+      "location": "Bogota"
+    },
+    {
+      "id": 3,
+      "name": "Formula 2",
+      "phone": "123456789",
+      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
+      "location": "Santiago"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "customer": "Ron Weasley",
+      "mechanic": "Fast Car",
+      "date": "2022-09-03",
+      "time": "09:00",
+      "finished": true
+    },
+    {
+      "id": 2,
+      "customer": "Ron Weasley",
+      "mechanic": "Formula I",
+      "date": "2015-09-10",
+      "time": "17:00",
+      "finished": true
+    },
+    {
+      "id": 3,
+      "customer": "Ron Weasley",
+      "mechanic": "Fix it Up",
+      "date": "2015-09-14",
+      "time": "16:00",
+      "finished": false
+    },
+    {
+      "id": 4,
+      "customer": "Thomas Edison",
+      "mechanic": "Fix it Up",
+      "date": "2015-09-17",
+      "time": "12:00",
+      "finished": false
+    },
+    {
+      "id": 5,
+      "customer": "James Watson",
+      "mechanic": "Formula I",
+      "date": "2015-09-18",
+      "time": "13:00",
+      "finished": false
+    },
+    {
+      "id": 5,
+      "customer": "Jim Moriarty",
+      "mechanic": "Fast Car",
+      "date": "2015-09-12",
+      "time": "14:00",
+      "finished": true
+    }
+  ]
+}

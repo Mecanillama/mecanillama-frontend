@@ -21,6 +21,15 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import ToastService from "primevue/toastservice";
+import RadioButton from 'primevue/radiobutton';
+import Avatar from 'primevue/avatar';
+import Password from 'primevue/password';
+import Carousel from 'primevue/carousel';
+import Rating from 'primevue/rating';
+import Textarea from 'primevue/textarea';
+
+// PrimeFlex Companion
+import "primeflex/primeflex.css";
 
 const app = createApp(App)
 
@@ -44,4 +53,11 @@ app.component("pv-toast", Toast);
 app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
+app.component("menu-bar", MenuBar);
+app.component('pv-radio-button', RadioButton);
+app.component('pv-avatar', Avatar);
+app.component('pv-password', Password);
+app.component('pv-carousel', Carousel);
+app.component('pv-rating', Rating);
+app.component('pv-textarea', Textarea);
 app.mount('#app')
