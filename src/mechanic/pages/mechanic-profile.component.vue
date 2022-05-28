@@ -158,6 +158,9 @@
           @click="addComment"
         />
       </div>
+
+      <!--<review-component></review-component>-->
+
     </div>
   </div>
 </template>
@@ -167,11 +170,14 @@ import generalHeaderComponent from "../../components/general-header.component.vu
 import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
 import { MechanicsProfileApiService } from "../services/mechanics-api.service";
 import { AppointmentsApiService } from "../../appointments/services/appointments.service";
+import reviewComponent from "../../reviews/pages/review.component.vue";
 
 export default {
+  components: { reviewComponent },
   name: "mechanic-profile",
   components: {
     generalHeaderComponent,
+    reviewComponent,
   },
   data() {
     return {
