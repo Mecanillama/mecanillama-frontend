@@ -7,7 +7,6 @@ import PrimeVue from "primevue/config";
 import "primevue/resources/themes/md-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
-// PrimeFlex Companion
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Button from "primevue/button";
@@ -31,6 +30,7 @@ import Textarea from 'primevue/textarea';
 
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
+import TabMenu from "primevue/tabmenu";
 
 const app = createApp(App)
 
@@ -55,6 +55,7 @@ app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
 app.component("menu-bar", MenuBar);
+app.component('TabMenu', TabMenu);
 app.component('pv-radio-button', RadioButton);
 app.component('pv-avatar', Avatar);
 app.component('pv-password', Password);
