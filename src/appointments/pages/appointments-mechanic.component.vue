@@ -96,15 +96,12 @@
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
+
 import { AppointmentsApiService } from "../services/appointments.service"
 import { FilterMatchMode } from "primevue/api";
 
 export default {
     name: 'appointments-mechanic',
-    components: {
-        generalHeaderComponent
-    },
     data(){
         return {
             appointments: [],
