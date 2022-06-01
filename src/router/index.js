@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -57,11 +58,33 @@ const router = createRouter({
     {
       path:'/home-mechanic',
       name: 'home-mechanic',
-      component: () => import('../mechanic/pages/home-mechanic.component.vue')
+      component: () => import('../mechanic-admin/pages/home-mechanic.component.vue')
+    },
+    {
+      path:'/mechanic-edit-profile',
+      name: 'mechanic-edit-profile',
+      component: () => import('../mechanic-admin/pages/edit-profile.vue')
+    },
+    {
+      path: "/mechanic/edit-profile/edit",
+      name: 'mechanic/edit',
+      component:()=> import('../mechanic-admin/pages/edit.vue')
+    },
+    {
+      path: "/:mechanic/edit-profile/prices",
+      name: 'mechanic/prices',
+      component:()=> import('../mechanic-admin/pages/prices.vue')
+    },
+    {
+      path: "/mechanic/edit-profile/contacts",
+      name: 'mechanic/contacts',
+      component:()=> import('../mechanic-admin/pages/contacts.vue')
     },
 
 
-  ]
+
+  ],
+
 })
 
 export default router
