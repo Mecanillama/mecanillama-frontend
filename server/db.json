@@ -143,7 +143,7 @@
     {
       "date": "2022-05-24T05:00:00.000Z",
       "time": "08:00",
-      "mechanic" : "Manhattan Auto Service & Bodywork",
+      "mechanic": "Manhattan Auto Service & Bodywork",
       "id": 6
     }
   ],
@@ -209,6 +209,13 @@
         "value": "mechanic"
       },
       "id": 10
+    },
+    {
+      "email": "idk@gmail.com",
+      "password": "$2a$10$HAlltE4UVIh8nuUZAi1wsuFopSK/NAGLDT/Kt0QewVF1RufJ2QD1C",
+      "name": "idk",
+      "role": "mechanic",
+      "id": 11
     }
   ]
 }

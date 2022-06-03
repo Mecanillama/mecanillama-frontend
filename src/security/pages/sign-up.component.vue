@@ -91,7 +91,7 @@ export default {
                 name: this.name,
                 email: this.email,
                 password: this.password,
-                role: this.role,
+                role: this.role.value,
             };
         },
 

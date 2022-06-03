@@ -1,16 +1,16 @@
 <template>
-<general-header-component></general-header-component>
+<customer-header-component></customer-header-component>
     <h1>HERE GOES THE HOME PAGE OF THE MECHANIC</h1>
 </template>
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
+import customerHeaderComponent from "../../components/customer-header.component.vue"
 
 export default {
     name: 'home-mechanic',
     components: {
-        generalHeaderComponent
+        customerHeaderComponent
     }
 }
 </script>

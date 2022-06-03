@@ -1,5 +1,5 @@
 <template>
-  <general-header-component></general-header-component>
+  <customer-header-component></customer-header-component>
   <pv-dropdown
     v-model="selectedMechanic"
     :options="mechanics"
@@ -166,7 +166,7 @@
 </template>
 
 <script>
-import generalHeaderComponent from "../../components/general-header.component.vue";
+import customerHeaderComponent from "../../components/customer-header.component.vue";
 import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
 import { MechanicsProfileApiService } from "../services/mechanics-api.service";
 import { AppointmentsApiService } from "../../appointments/services/appointments.service";
@@ -176,7 +176,7 @@ export default {
   components: { reviewComponent },
   name: "mechanic-profile",
   components: {
-    generalHeaderComponent,
+    customerHeaderComponent,
     reviewComponent,
   },
   data() {

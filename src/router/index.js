@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: 'home-view'
+      redirect: 'sign-in'
     },
     {
       path: '/home',

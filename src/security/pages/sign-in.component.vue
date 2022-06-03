@@ -65,7 +65,16 @@ export default {
                     localStorage.setItem(
                         "accessToken",
                         JSON.stringify(response.data.accessToken));
-                    this.$router.push("/home-customer");
+                    console.log(response.data.user)
+
+                    const user=JSON.parse(AuthService.getCurrentUser());
+                    console.log(user)
+                    if(user.role === "driver"){
+                        this.$router.push("/home-customer");
+                    }
+                    if(user.role === "mechanic"){
+                        this.$router.push("/home-mechanic");
+                    }
                     console.log(userGiven.email)
                 })
                 .catch((error) => {

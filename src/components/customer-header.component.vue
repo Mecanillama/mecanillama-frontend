@@ -4,7 +4,7 @@
     <template #start>
         <div class = "flex">
             <div class="m-3">
-                <RouterLink to="/home-view">
+                <RouterLink to="/home-customer">
                     <h1 class="font-bold">Mecanillama</h1>
                 </RouterLink>
             </div>
@@ -32,7 +32,7 @@
 <script>
 
 export default{
-    name: 'general-header',
+    name: 'customer-header',
     data(){
         return{
             navigation:[

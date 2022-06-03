@@ -1,5 +1,5 @@
 <template>
-<general-header-component></general-header-component>
+<customer-header-component></customer-header-component>
         <div>
             <div class="m-6">
                 <pv-toolbar class="mb-4">
@@ -84,14 +84,14 @@
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
+import customerHeaderComponent from "../../components/customer-header.component.vue"
 import { AppointmentsApiService } from "../services/appointments.service"
 import { FilterMatchMode } from "primevue/api";
 
 export default {
     name: 'appointments-customer',
     components: {
-        generalHeaderComponent
+        customerHeaderComponent
     },
     data(){
         return {
