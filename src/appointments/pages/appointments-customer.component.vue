@@ -46,11 +46,6 @@
                 </template>
 
                 <pv-column
-                selection-mode="multiple"
-                :style="{ width: `3rem` }"
-                :exportable="false">
-                </pv-column>
-                <pv-column
                 field="mechanic"
                 header="Mechanic"
                 :sortable="true"
@@ -82,14 +77,6 @@
                 </template>
                 </pv-column>
 
-                <pv-column :exportable="false" :style="{ minWidth: `8rem` }">
-                <template #body="slotProps">
-                    <pv-button
-                    icon="pi pi-trash"
-                    class="p-button-text p-button-rounded"
-                    @click="confirmDeleteAppointment(slotProps.data)" />
-                </template>
-                </pv-column>
                 </pv-data-table>
             </div>
         </div>
