@@ -62,22 +62,33 @@
       "id": 1,
       "name": "Fast Car",
       "phone": "123456789",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Lima"
+      "description": "This is a family-owned and operated business that has been proudly serving the community since 1999.  These repairs can range from minor and major mechanical repairs, to tires and wheel alignment, to check engine light diagnosis and repairs, to state safety inspections, as well as your scheduled maintenance needs.",
+      "location": "San Borja",
+      "image": "https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
     },
     {
       "id": 2,
       "name": "Formula 1",
       "phone": "123456789",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Bogota"
+      "description": "Formula 1 was established in 2011 and has been providing Ridgewood and the surrounding area with quality automotive repairs ever since. This work is backed by a 12-month / 12,000-mile warranty for your peace of mind. Our survey of their recent customers revealed a group who describe the team here as “honest”, “reliable”, “friendly”, “honest”, and “helpful”.  ",
+      "location": "Surco",
+      "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&h=307"
     },
     {
       "id": 3,
-      "name": "Formula 2",
+      "name": "Blue Star Brothers",
       "phone": "123456789",
-      "description": "Lorem ipsum elo lorem upsum ero lorem upsim impsum eto",
-      "location": "Santiago"
+      "description": "This shop features a team of very experienced, highly trained technicians who are equipped with the tools and equipment necessary to perform a wide range of repairs. A local shuttle service, early bird drop off, Saturday business hours, and a waiting area with wireless Internet are also available for your convenience. ",
+      "location": "La Molina",
+      "image": "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?ixlib=rb-1.2.1&&auto=format&fit=crop&w=460&h=307"
+    },
+    {
+      "id": 4,
+      "name": "Manhattan Auto Service & Bodywork",
+      "phone": "123456789",
+      "description": "This shop features a team of very experienced, highly trained technicians who are equipped with the tools and equipment necessary to perform a wide range of repairs. Manhattan Auto Service & Bodywork is a full-service shop, which means they can perform all major repairs and scheduled maintenance. ",
+      "location": "San Borja",
+      "image": "https://images.unsplash.com/photo-1579103769354-8796259d8d54?ixlib=rb-1.2.18&auto=format&fit=crop&w=460&h=307"
     }
   ],
   "appointments": [

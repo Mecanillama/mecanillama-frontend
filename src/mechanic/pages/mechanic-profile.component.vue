@@ -38,15 +38,15 @@
           <div class="field mt-3">
             <div class="field">
               <label for="date">Date</label>
-                <pv-calendar id="date" v-model="appointment.date" autocomplete="off"></pv-calendar>
+                <pv-calendar placeholder="Select a Date" id="date" v-model="appointment.date" autocomplete="off"  dateFormat="dd-mm-yy" :minDate="minDate"></pv-calendar>
             </div>
           </div>
 
-          <div class="field">
-            <div class="field">
-              <label for="time">Time</label>
-                <pv-calendar id="time" v-model="appointment.time" :timeOnly="true" hourFormat="12"></pv-calendar>
-            </div>
+          <div class="field mt-3">
+              <div class="field">
+                 <label for="time">Time</label>
+                  <pv-dropdown required id = "time" v-model="appointment.time" :options="availableTimes" optionLabel="time" placeholder="Select a Time" ></pv-dropdown>
+              </div>
           </div>
 
           <template #footer>
@@ -197,18 +197,30 @@ export default {
         date: null,
         time: null,
       },
+      availableTimes: [
+			  {time: '08:00 AM', value: '08:00'},
+			  {time: '10:00 AM', value: '10:00'},
+        {time: '12:00 PM', value: '12:00'},
+			  {time: '2:00 PM', value: '2:00'},
+        {time: '4:00 PM', value: '4:00'},
+        {time: '6:00 PM', value: '6:00'},
+      ],
       mechanics: [],
       selectedMechanic: {},
       reviews: [],
       reviewsService: null,
       mechanicsService: null,
-      appointmentsService: null
+      appointmentsService: null,
+      minDate: null
     };
   },
   created() {
     this.reviewsService = new ReviewsApiService();
     this.mechanicsService = new MechanicsProfileApiService();
     this.appointmentsService = new AppointmentsApiService();
+    let today = new Date();
+    this.minDate = new Date();
+    this.minDate.setDate(today.getDate() + 1);
     this.mechanicsService.getAll().then((response) => {
       this.mechanics = response.data;
       this.selectedMechanic = this.mechanics[0];
@@ -245,7 +257,11 @@ export default {
             console.log(response);
           });
           this.appointmentDialog = false;
-        },
+    },
+
+    hideDialog(){
+      this.appointmentDialog = false;
+    },
     addComment() {
       if (this.rating == null || this.body == null) this.field = true;
       else {

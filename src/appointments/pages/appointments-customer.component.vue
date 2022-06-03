@@ -134,6 +134,7 @@ export default {
         appointment.status = appointment.finished
             ? this.statuses[0].label
             : this.statuses[1].label;
+        appointment.date = appointment.date.slice(0,10);
         return appointment;
     },
     getStorableAppointment(displayableAppointment) {

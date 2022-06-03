@@ -70,7 +70,7 @@ export default {
             role: null,
             roles: [
 			{name: 'Mechanic', value: 'mechanic'},
-			{name: 'Driver', code: 'driver'},
+			{name: 'Driver', value: 'driver'},
         ]
         };
     },

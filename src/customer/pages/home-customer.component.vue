@@ -15,13 +15,14 @@
           <div class="product-item-content">
             <div class="mb-3">
               <img
-                src="https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
-                class="product-image"
+                :src="slotProps.data.image"
+                :alt="slotProps.data.image"
+                 class="product-image"
               />
             </div>
             <div>
-              <h4 class="mb-1">{{ slotProps.data.mechanic }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
+              <h4 class="mb-1">{{ slotProps.data.name }}</h4>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
               <div class="car-buttons mt-5">
                 <router-link to="/mechanic-profile">
                   <pv-button icon="pi pi-plus" label="See More" />
@@ -49,13 +50,14 @@
           <div class="product-item-content">
             <div class="mb-3">
               <img
-                src="https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
+                :src="slotProps.data.image"
+                :alt="slotProps.data.image"
                 class="product-image"
               />
             </div>
             <div>
-              <h4 class="mb-1">{{ slotProps.data.mechanic }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
+              <h4 class="mb-1">{{ slotProps.data.name }}</h4>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
               <div class="car-buttons mt-5">
                 <router-link to="/mechanic-profile">
                   <pv-button icon="pi pi-plus" label="See More" />
@@ -83,13 +85,14 @@
           <div class="product-item-content">
             <div class="mb-3">
               <img
-                src="https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
-                class="product-image"
+                :src="slotProps.data.image"
+                :alt="slotProps.data.image"
+                 class="product-image"
               />
             </div>
             <div>
-              <h4 class="mb-1">{{ slotProps.data.mechanic }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
+              <h4 class="mb-1">{{ slotProps.data.name }}</h4>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
               <div class="car-buttons mt-5">
                 <router-link to="/mechanic-profile">
                   <pv-button icon="pi pi-plus" label="See More" />
@@ -154,7 +157,7 @@ export default {
 }
 
 .product-image {
-  width: 65%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 70%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 </style>
