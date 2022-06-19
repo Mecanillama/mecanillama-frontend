@@ -1,5 +1,5 @@
 <template>
-  <general-header-component></general-header-component>
+  <customer-header-component></customer-header-component>
   <pv-dropdown
     v-model="selectedMechanic"
     :options="mechanics"
@@ -31,8 +31,30 @@
         </span>
         <p>{{ selectedMechanic.location }}</p>
         <p class="font-semibold">{{ selectedMechanic.phone }}</p>
-        <pv-button>Make an appointment</pv-button>
+        <pv-button @click="openNew">Make an appointment</pv-button>
       </div>
+
+        <pv-dialog v-model:visible="appointmentDialog" :style="{ width: '450px'}" header="Make an appointment" :modal="true" class="p-fluid">
+          <div class="field mt-3">
+            <div class="field">
+              <label for="date">Date</label>
+                <pv-calendar placeholder="Select a Date" id="date" v-model="appointment.date" autocomplete="off"  dateFormat="dd-mm-yy" :minDate="minDate"></pv-calendar>
+            </div>
+          </div>
+
+          <div class="field mt-3">
+              <div class="field">
+                 <label for="time">Time</label>
+                  <pv-dropdown required id = "time" v-model="appointment.time" :options="availableTimes" optionLabel="time" placeholder="Select a Time" ></pv-dropdown>
+              </div>
+          </div>
+
+          <template #footer>
+            <pv-button :label="'Cancel'.toUpperCase()" icon="pi pi-times" class="p-button-text" @click="hideDialog" />
+            <pv-button :label="'Save'.toUpperCase()" icon="pi pi-check" class="p-button-text" @click="saveAppointment" />
+          </template>
+        </pv-dialog>
+
     </div>
     <div
       class="
@@ -86,16 +108,6 @@
               </div>
               <div class="col">
                 <div class="grid align-items-center p-2">
-                  <!--
-                  <span class="">
-                    <i class="pi pi-star-fill"></i>
-                    <i class="pi pi-star-fill"></i>
-                    <i class="pi pi-star-fill"></i>
-                    <i class="pi pi-star-fill"></i>
-                    <i class="pi pi-star-fill"></i>
-                  </span>
-                  -->
-
                   <pv-rating
                     :modelValue="review.rating"
                     :readonly="true"
@@ -113,39 +125,8 @@
             </div>
           </li>
         </ul>
-
-        <!--
-        <div class="grid box-review p-5">
-          <div class="col flex flex-column justify-content-center m-2">
-            <p class="font-semibold p-2">Ludo Bagman</p>
-            <span clas="p-2"
-              ><i class="pi pi-car p-2"></i>2022 Mercedes-Benz C-Class</span
-            >
-          </div>
-          <div class="col">
-            <div class="grid align-items-center p-2">
-              <span class="">
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-                <i class="pi pi-star-fill"></i>
-              </span>
-              <span class="font-semibold pl-6" style="font-size: 1.1rem">
-                05/20/2022
-              </span>
-            </div>
-            <p>
-              A thorough and honest business! I know the job will always be done
-              correctly and I don't have to return multiple times. They are also
-              always on time and the wait is never too much.
-            </p>
-          </div>
-        </div>
-        -->
       </div>
-      
-      <div class="flex flex-column" style="max-width: 500px">
+      <div class="flex flex-column text-center w-full">
         <pv-rating
           v-model="rating"
           :modelValue="5"
@@ -185,20 +166,22 @@
 </template>
 
 <script>
-import generalHeaderComponent from "../../components/general-header.component.vue";
+import customerHeaderComponent from "../../components/customer-header.component.vue";
 import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
 import { MechanicsProfileApiService } from "../services/mechanics-api.service";
+import { AppointmentsApiService } from "../../appointments/services/appointments.service";
 import reviewComponent from "../../reviews/pages/review.component.vue";
 
 export default {
   components: { reviewComponent },
   name: "mechanic-profile",
   components: {
-    generalHeaderComponent,
+    customerHeaderComponent,
     reviewComponent,
   },
   data() {
     return {
+      appointmentDialog: false,
       rating: null,
       body: null,
       field: false,
@@ -210,17 +193,34 @@ export default {
         date: "date test",
         workshopId: null,
       },
-
+      appointment: {
+        date: null,
+        time: null,
+      },
+      availableTimes: [
+			  {time: '08:00 AM', value: '08:00'},
+			  {time: '10:00 AM', value: '10:00'},
+        {time: '12:00 PM', value: '12:00'},
+			  {time: '2:00 PM', value: '2:00'},
+        {time: '4:00 PM', value: '4:00'},
+        {time: '6:00 PM', value: '6:00'},
+      ],
       mechanics: [],
       selectedMechanic: {},
       reviews: [],
       reviewsService: null,
       mechanicsService: null,
+      appointmentsService: null,
+      minDate: null
     };
   },
   created() {
     this.reviewsService = new ReviewsApiService();
     this.mechanicsService = new MechanicsProfileApiService();
+    this.appointmentsService = new AppointmentsApiService();
+    let today = new Date();
+    this.minDate = new Date();
+    this.minDate.setDate(today.getDate() + 1);
     this.mechanicsService.getAll().then((response) => {
       this.mechanics = response.data;
       this.selectedMechanic = this.mechanics[0];
@@ -232,12 +232,35 @@ export default {
     });
   },
   methods: {
+    openNew() {
+      this.appointment = {};
+      this.submitted = false;
+      this.appointmentDialog = true;
+    },
     updateSelectedMechanic() {
       this.reviewsService
         .findByMechanicId(this.selectedMechanic.id)
         .then((response) => {
           this.reviews = response.data;
         });
+    },
+    saveAppointment() {
+      this.submitted = true;
+      console.log(this.appointment);
+        this.appointmentsService.create(this.appointment).then((response) => {
+            this.$toast.add({
+              severity: "success",
+              summary: "Successful",
+              detail: "Appointment Created",
+              life: 3000,
+           });
+            console.log(response);
+          });
+          this.appointmentDialog = false;
+    },
+
+    hideDialog(){
+      this.appointmentDialog = false;
     },
     addComment() {
       if (this.rating == null || this.body == null) this.field = true;

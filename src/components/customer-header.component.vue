@@ -4,7 +4,7 @@
     <template #start>
         <div class = "flex">
             <div class="m-3">
-                <RouterLink to="/home-view">
+                <RouterLink to="/home-customer">
                     <h1 class="font-bold">Mecanillama</h1>
                 </RouterLink>
             </div>
@@ -32,18 +32,18 @@
 <script>
 
 export default{
-    name: 'general-header',
+    name: 'customer-header',
     data(){
         return{
             navigation:[
-                { label: "Home",icon:'pi pi-fw pi-file', to: "/home-customer" },
+                { label: "Home",icon:'pi pi-fw pi-home', to: "/home-customer" },
                 { label: "Appointments", icon:'pi pi-fw pi-calendar',to: "/appointments-customer" },
                 { label: "Favourites", icon:'pi pi-fw pi-star', to: "/favourites" },
                 { label: "Notifications", icon:'pi pi-fw pi-bell', to: "/notifications" },
             ],
             accountMenu: [{
                 items: [
-                    { label: "Profile", to: "/", icon: 'pi pi-fw pi-user'},
+                    { label: "Profile", to: "/customer-profile", icon: 'pi pi-fw pi-user'},
                     { label: "Sign out", to: "/", icon: 'pi pi-fw pi-sign-out' },
                 ]
             }

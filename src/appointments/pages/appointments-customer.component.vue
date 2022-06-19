@@ -1,4 +1,5 @@
 <template>
+<customer-header-component></customer-header-component>
         <div>
             <div class="m-6">
                 <pv-toolbar class="mb-4">
@@ -45,11 +46,6 @@
                 </template>
 
                 <pv-column
-                selection-mode="multiple"
-                :style="{ width: `3rem` }"
-                :exportable="false">
-                </pv-column>
-                <pv-column
                 field="mechanic"
                 header="Mechanic"
                 :sortable="true"
@@ -81,14 +77,6 @@
                 </template>
                 </pv-column>
 
-                <pv-column :exportable="false" :style="{ minWidth: `8rem` }">
-                <template #body="slotProps">
-                    <pv-button
-                    icon="pi pi-trash"
-                    class="p-button-text p-button-rounded"
-                    @click="confirmDeleteAppointment(slotProps.data)" />
-                </template>
-                </pv-column>
                 </pv-data-table>
             </div>
         </div>
@@ -96,14 +84,14 @@
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
+import customerHeaderComponent from "../../components/customer-header.component.vue"
 import { AppointmentsApiService } from "../services/appointments.service"
 import { FilterMatchMode } from "primevue/api";
 
 export default {
     name: 'appointments-customer',
     components: {
-        generalHeaderComponent
+        customerHeaderComponent
     },
     data(){
         return {
@@ -133,6 +121,7 @@ export default {
         appointment.status = appointment.finished
             ? this.statuses[0].label
             : this.statuses[1].label;
+        appointment.date = appointment.date.slice(0,10);
         return appointment;
     },
     getStorableAppointment(displayableAppointment) {

@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: 'home-view'
+      redirect: 'sign-in'
     },
     {
       path: '/home',
@@ -40,6 +40,11 @@ const router = createRouter({
       component: () => import('../customer/pages/home-customer.component.vue')
     },
     {
+      path: '/home-mechanic',
+      name: 'home-mechanic',
+      component: () => import('../mechanic/pages/home-mechanic.component.vue')
+    },
+    {
       path: '/mechanic-profile',
       name: 'mechanic-profile',
       component: () => import('../mechanic/pages/mechanic-profile.component.vue')
@@ -53,6 +58,11 @@ const router = createRouter({
       path:'/appointments-mechanic',
       name: 'appointments-mechanic',
       component: () => import('../appointments/pages/appointments-mechanic.component.vue')
+    },
+    {
+      path:'/customer-profile',
+      name: 'customer-profile',
+      component: () => import('../customer/pages/customer-profile.component.vue')
     },
 
 
