@@ -2,7 +2,7 @@
   <RouterView />
   <div class="home">
     <h1 class="mr-2">Mecanillama</h1>
-    <p>The app for connecting driver and workshop</p>
+    <p>The app for connecting driver and mechanic</p>
     <div class="buttons">
       <div class="button">
         <RouterLink to="/sign-up">

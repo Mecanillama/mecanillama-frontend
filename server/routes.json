@@ -1,7 +1,7 @@
 {
     "/api/v1/*": "/$1",
     "/auth/*": "/$1",
-    "/reviews/:workshopId": "/reviews?workshopId=:workshopId",
+    "/reviews/:mechanicId": "/reviews?mechanicId=:mechanicId",
     "/sign-in": "/signin",
     "/sign-up": "/signup"
 }

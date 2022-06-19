@@ -1,7 +1,7 @@
 import http from "../../core/services/http-common";
 
-export class WorkshopsApiService {
+export class MechanicsApiService {
     getAll() {
-        return http.get("/workshops");
+        return http.get("/mechanics");
       }
 }

@@ -2,7 +2,7 @@
   <customer-header-component></customer-header-component>
   <div class="card m-4">
     <pv-carousel
-      :value="workshops"
+      :value="mechanics"
       :numVisible="3"
       :numScroll="3"
       :responsiveOptions="responsiveOptions"
@@ -24,7 +24,7 @@
               <h4 class="mb-1">{{ slotProps.data.name }}</h4>
               <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
               <div class="car-buttons mt-5">
-                <router-link to="/mechanic-profile">
+                <router-link :to="`/mechanic-profile/${slotProps.data.id}`">
                   <pv-button icon="pi pi-plus" label="See More" />
                 </router-link>
               </div>
@@ -37,7 +37,7 @@
 
   <div class="card m-4">
     <pv-carousel
-      :value="workshops"
+      :value="mechanics"
       :numVisible="3"
       :numScroll="3"
       :responsiveOptions="responsiveOptions"
@@ -72,7 +72,7 @@
 
   <div class="card m-4">
     <pv-carousel
-      :value="workshops"
+      :value="mechanics"
       :numVisible="3"
       :numScroll="3"
       :responsiveOptions="responsiveOptions"
@@ -108,7 +108,7 @@
 
 <script>
 import customerHeaderComponent from "../../components/customer-header.component.vue";
-import { WorkshopsApiService } from "../services/workshops.service";
+import { MechanicsProfileApiService } from "../../mechanic/services/mechanics-api.service";
 
 export default {
   name: "home-customer",
@@ -117,8 +117,8 @@ export default {
   },
   data() {
     return {
-      workshops: null,
-      workshopService: null,
+      mechanics: null,
+      mechanicService: null,
       responsiveOptions: [
         {
           breakpoint: "1024px",
@@ -139,9 +139,9 @@ export default {
     };
   },
   created() {
-    this.workshopService = new WorkshopsApiService();
-    this.workshopService.getAll().then((response) => {
-      this.workshops = response.data;
+    this.mechanicService = new MechanicsProfileApiService();
+    this.mechanicService.getAll().then((response) => {
+      this.mechanics = response.data;
     });
   },
 };

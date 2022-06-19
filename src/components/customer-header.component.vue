@@ -16,7 +16,7 @@
             <pv-input-text
                 v-model="search"
                 class="border-round p-3 px-3 w-full"
-                placeholder="Search that workshop here..." />
+                placeholder="Search that mechanic here..." />
         </div>    
             <div class="flex align-items-center justify-content-center cursor-pointer profile text-center">
                 <menu-bar :model="accountMenu"></menu-bar>

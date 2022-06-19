@@ -14,7 +14,7 @@
       "publisher": "primer nombre",
       "car": "Audi A4",
       "body": "some comment",
-      "workshopId": 1
+      "mechanicId": 1
     },
     {
       "id": 2,
@@ -23,7 +23,7 @@
       "publisher": "primer nombre",
       "car": "BMW X5",
       "body": "some comment",
-      "workshopId": 2
+      "mechanicId": 2
     },
     {
       "id": 3,
@@ -32,7 +32,7 @@
       "publisher": "primer nombre",
       "car": "Honda Civic",
       "body": "some comment",
-      "workshopId": 3
+      "mechanicId": 3
     },
     {
       "rating": 3,
@@ -40,7 +40,7 @@
       "car": "car test",
       "publisher": "name test",
       "date": "date test",
-      "workshopId": 1,
+      "mechanicId": 1,
       "id": 4
     }
   ],
@@ -57,7 +57,7 @@
       "name": "Arthur Weasley"
     }
   ],
-  "workshops": [
+  "mechanics": [
     {
       "id": 1,
       "name": "Fast Car",
@@ -205,10 +205,7 @@
       "email": "jesus@amen.com",
       "password": "$2a$10$f10K9/cU8dx3ym1Bfa.sfOxSEFYcGaXTCuTJq5cKybkDGs9y/7/tm",
       "name": "jesus de nazareth",
-      "role": {
-        "name": "Mechanic",
-        "value": "mechanic"
-      },
+      "role": "mechanic",
       "id": 10
     },
     {

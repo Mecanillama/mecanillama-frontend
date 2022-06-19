@@ -17,6 +17,6 @@ export class ReviewsApiService {
     return http.delete(`/reviews/${id}`);
   }
   findByMechanicId(postId) {
-    return http.get(`/reviews?workshopId=${postId}`);
+    return http.get(`/reviews?mechanicId=${postId}`);
   }
 }

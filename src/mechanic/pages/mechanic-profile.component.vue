@@ -159,8 +159,6 @@
         />
       </div>
 
-      <!--<review-component></review-component>-->
-
     </div>
   </div>
 </template>
@@ -191,7 +189,6 @@ export default {
         car: "car test",
         publisher: "name test",
         date: "date test",
-        workshopId: null,
       },
       appointment: {
         date: null,
@@ -206,6 +203,7 @@ export default {
         {time: '6:00 PM', value: '6:00'},
       ],
       mechanics: [],
+      mechanicId: null,
       selectedMechanic: {},
       reviews: [],
       reviewsService: null,
@@ -215,15 +213,19 @@ export default {
     };
   },
   created() {
+    this.mechanicId = this.$route.params.mechanicId;
     this.reviewsService = new ReviewsApiService();
     this.mechanicsService = new MechanicsProfileApiService();
     this.appointmentsService = new AppointmentsApiService();
     let today = new Date();
     this.minDate = new Date();
     this.minDate.setDate(today.getDate() + 1);
+    this.mechanicsService.getById(this.mechanicId).then(response => {
+      this.selectedMechanic = response.data;
+    })
+
     this.mechanicsService.getAll().then((response) => {
       this.mechanics = response.data;
-      this.selectedMechanic = this.mechanics[0];
       this.reviewsService
         .findByMechanicId(this.selectedMechanic.id)
         .then((response) => {
@@ -269,7 +271,7 @@ export default {
         this.field = false;
         this.newReview.rating = this.rating;
         this.newReview.body = this.body;
-        this.newReview.workshopId = this.selectedMechanic.id;
+        this.newReview.mechanicId = this.selectedMechanic.id;
         this.reviewsService.create(this.newReview).then((response) => {
           this.reviews.push(response.data);
         });
