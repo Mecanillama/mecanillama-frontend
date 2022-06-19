@@ -69,7 +69,7 @@ export default {
 
                     const user=JSON.parse(AuthService.getCurrentUser());
                     console.log(user)
-                    if(user.role === "driver"){
+                    if(user.role === "customer"){
                         this.$router.push("/home-customer");
                     }
                     if(user.role === "mechanic"){

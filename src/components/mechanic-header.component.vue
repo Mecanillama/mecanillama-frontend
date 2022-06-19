@@ -36,7 +36,7 @@ export default{
     data(){
         return{
             navigation:[
-                { label: "Home",icon:'pi pi-fw pi-file', to: "/home-customer" },
+                { label: "Home",icon:'pi pi-fw pi-home', to: "/home-customer" },
                 { label: "Appointments", icon:'pi pi-fw pi-calendar',to: "/appointments-customer" },
                 { label: "Favourites", icon:'pi pi-fw pi-star', to: "/favourites" },
                 { label: "Notifications", icon:'pi pi-fw pi-bell', to: "/notifications" },
