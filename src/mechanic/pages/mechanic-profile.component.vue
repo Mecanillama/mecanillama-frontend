@@ -1,11 +1,5 @@
 <template>
   <customer-header-component></customer-header-component>
-  <pv-dropdown
-    v-model="selectedMechanic"
-    :options="mechanics"
-    optionLabel="name"
-    v-on:change="updateSelectedMechanic"
-  ></pv-dropdown>
   <div class="m-6">
     <div class="grid">
       <div class="col text-center">

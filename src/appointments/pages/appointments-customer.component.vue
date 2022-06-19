@@ -2,22 +2,7 @@
 <customer-header-component></customer-header-component>
         <div>
             <div class="m-6">
-                <pv-toolbar class="mb-4">
-                    <template #start>
-                    <pv-button
-                        label="New appointment"
-                        icon="pi pi-plus"
-                        class="p-button-success mr-2"
-                        @click="openNew" />
-                    </template>
-                    <template #end>
-                    <pv-button
-                        label="Export"
-                        icon="pi pi-upload"
-                        class="p-button-help"
-                        @click="exportToCSV($event)" />
-                    </template>
-                </pv-toolbar>
+
                 <pv-data-table
                     ref="dt"
                     v-model:selection="selectedJobOffers"

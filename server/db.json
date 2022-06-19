@@ -42,6 +42,15 @@
       "date": "date test",
       "mechanicId": 1,
       "id": 4
+    },
+    {
+      "rating": 3,
+      "body": "a",
+      "car": "car test",
+      "publisher": "name test",
+      "date": "date test",
+      "mechanicId": 2,
+      "id": 5
     }
   ],
   "profile": {
