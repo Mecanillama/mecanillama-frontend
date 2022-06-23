@@ -1,11 +1,11 @@
 <template>
-        <div>
-            <div class="m-6">
-                <pv-toolbar class="mb-4">
-                    <template #start>
-                    <pv-button
-                        label="Promote business"
-                        icon="pi pi-plus"
+  <div>
+    <div class="m-6">
+      <pv-toolbar class="mb-4">
+        <template #start>
+          <pv-button
+              label="Promote business"
+              icon="pi pi-plus"
                         class="p-button-success mr-2"
                         @click="openNew" />
                     </template>
@@ -96,15 +96,14 @@
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
+
 import { AppointmentsApiService } from "../services/appointments.service"
 import { FilterMatchMode } from "primevue/api";
 
 export default {
     name: 'appointments-mechanic',
     components: {
-        generalHeaderComponent
-    },
+        },
     data(){
         return {
             appointments: [],
@@ -145,11 +144,7 @@ export default {
         finished: displayableAppointment.status.label === "Finished",
       };
     },
-    initFilters() {
-      this.filters = {
-        global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-      };
-    },
+
     findIndexById(id) {
       return this.appointment.findIndex(appointment => appointment.id === id);
     },
