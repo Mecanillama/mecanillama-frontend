@@ -6,8 +6,6 @@
       <img
         src="https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
       />
-
-
       <div>
         <span>
           <h1 class="mb-1">title</h1>
@@ -24,7 +22,7 @@
     </div>
 
     <div>
-      <h1>Upcoming</h1>
+
       <appointments-mechanic-component></appointments-mechanic-component>
     </div>
   </div>
