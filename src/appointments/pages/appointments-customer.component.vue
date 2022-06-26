@@ -2,7 +2,6 @@
 <customer-header-component></customer-header-component>
         <div>
             <div class="m-6">
-
                 <pv-data-table
                     ref="dt"
                     v-model:selection="selectedJobOffers"
@@ -107,6 +106,7 @@ export default {
             ? this.statuses[0].label
             : this.statuses[1].label;
         appointment.date = appointment.date.slice(0,10);
+        appointment.time = appointment.time;
         return appointment;
     },
     getStorableAppointment(displayableAppointment) {

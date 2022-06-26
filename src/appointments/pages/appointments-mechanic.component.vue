@@ -1,4 +1,5 @@
 <template>
+<mechanic-header-component></mechanic-header-component>
         <div>
             <div class="m-6">
                 <pv-toolbar class="mb-4">
@@ -96,14 +97,15 @@
 
 <script>
 
-import generalHeaderComponent from "../../components/general-header.component.vue"
 import { AppointmentsApiService } from "../services/appointments.service"
 import { FilterMatchMode } from "primevue/api";
+import mechanicHeaderComponent from '../../components/mechanic-header.component.vue';
 
 export default {
     name: 'appointments-mechanic',
     components: {
-        generalHeaderComponent
+        generalHeaderComponent,
+        mechanicHeaderComponent
     },
     data(){
         return {

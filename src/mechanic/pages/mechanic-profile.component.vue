@@ -32,7 +32,7 @@
           <div class="field mt-3">
             <div class="field">
               <label for="date">Date</label>
-                <pv-calendar placeholder="Select a Date" id="date" v-model="appointment.date" autocomplete="off"  dateFormat="dd-mm-yy" :minDate="minDate"></pv-calendar>
+                <pv-calendar placeholder="Select a Date" id="date" v-model="appointment.date" :reduce="availableTimes => availableTimes.time" autocomplete="off"  dateFormat="dd-mm-yy" :minDate="minDate"></pv-calendar>
             </div>
           </div>
 
@@ -192,9 +192,9 @@ export default {
 			  {time: '08:00 AM', value: '08:00'},
 			  {time: '10:00 AM', value: '10:00'},
         {time: '12:00 PM', value: '12:00'},
-			  {time: '2:00 PM', value: '2:00'},
-        {time: '4:00 PM', value: '4:00'},
-        {time: '6:00 PM', value: '6:00'},
+			  {time: '14:00 PM', value: '2:00'},
+        {time: '16:00 PM', value: '4:00'},
+        {time: '18:00 PM', value: '6:00'},
       ],
       mechanics: [],
       mechanicId: null,
@@ -242,6 +242,7 @@ export default {
     },
     saveAppointment() {
       this.submitted = true;
+      this.appointment.time = this.appointment.time.value;
       console.log(this.appointment);
         this.appointmentsService.create(this.appointment).then((response) => {
             this.$toast.add({

@@ -11,7 +11,7 @@
       "id": 1,
       "rating": 3,
       "date": "2022-09-03",
-      "publisher": "primer nombre",
+      "publisher": "John Doe",
       "car": "Audi A4",
       "body": "some comment",
       "mechanicId": 1
@@ -20,7 +20,7 @@
       "id": 2,
       "rating": 2,
       "date": "2022-09-03",
-      "publisher": "primer nombre",
+      "publisher": "Mario Perez",
       "car": "BMW X5",
       "body": "some comment",
       "mechanicId": 2
@@ -29,7 +29,7 @@
       "id": 3,
       "rating": 1,
       "date": "2022-09-03",
-      "publisher": "primer nombre",
+      "publisher": "George Brown",
       "car": "Honda Civic",
       "body": "some comment",
       "mechanicId": 3
@@ -38,7 +38,7 @@
       "rating": 3,
       "body": "comentario en id 1 con 3 estrellas",
       "car": "car test",
-      "publisher": "name test",
+      "publisher": "James Bond",
       "date": "date test",
       "mechanicId": 1,
       "id": 4
@@ -154,6 +154,49 @@
       "time": "08:00",
       "mechanic": "Manhattan Auto Service & Bodywork",
       "id": 6
+    },
+    {
+      "date": "2022-06-28T05:00:00.000Z",
+      "time": {
+        "time": "12:00 PM",
+        "value": "12:00"
+      },
+      "id": 7
+    },
+    {
+      "date": "2022-06-30T05:00:00.000Z",
+      "time": {
+        "time": "10:00 AM",
+        "value": "10:00"
+      },
+      "id": 8
+    },
+    {
+      "time": {
+        "time": "08:00 AM"
+      },
+      "date": "2022-06-30T05:00:00.000Z",
+      "id": 9
+    },
+    {
+      "date": "2022-06-29T05:00:00.000Z",
+      "time": {
+        "value": "10:00 AM"
+      },
+      "id": 10
+    },
+    {
+      "date": "2022-06-28T05:00:00.000Z",
+      "time": {
+        "time": "10:00 AM",
+        "value": "10:00"
+      },
+      "id": 11
+    },
+    {
+      "date": "2022-08-24T05:00:00.000Z",
+      "time": "08:00",
+      "id": 12
     }
   ],
   "users": [
