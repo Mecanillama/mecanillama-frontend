@@ -1,26 +1,10 @@
 <template>
-<mechanic-header-component></mechanic-header-component>
         <div>
             <div class="m-6">
                 <pv-toolbar class="mb-4">
-                    <template #start>
-                    <pv-button
-                        label="Promote business"
-                        icon="pi pi-plus"
-                        class="p-button-success mr-2"
-                        @click="openNew" />
-                    </template>
-                    <template #end>
-                    <pv-button
-                        label="Export"
-                        icon="pi pi-upload"
-                        class="p-button-help"
-                        @click="exportToCSV($event)" />
-                    </template>
                 </pv-toolbar>
                 <pv-data-table
                     ref="dt"
-                    v-model:selection="selectedJobOffers"
                     :value="appointments"
                     data-key="id"
                     :paginator="true"
@@ -45,11 +29,6 @@
                 </div>
                 </template>
 
-                <pv-column
-                selection-mode="multiple"
-                :style="{ width: `3rem` }"
-                :exportable="false">
-                </pv-column>
                 <pv-column
                 field="customer"
                 header="Customer"
@@ -81,15 +60,6 @@
                     <pv-tag v-else severity="info">{{ slotProps.data.status }}</pv-tag>
                 </template>
                 </pv-column>
-
-                <pv-column :exportable="false" :style="{ minWidth: `8rem` }">
-                <template #body="slotProps">
-                    <pv-button
-                    icon="pi pi-trash"
-                    class="p-button-text p-button-rounded"
-                    @click="confirmDeleteAppointment(slotProps.data)" />
-                </template>
-                </pv-column>
                 </pv-data-table>
             </div>
         </div>
@@ -104,7 +74,6 @@ import mechanicHeaderComponent from '../../components/mechanic-header.component.
 export default {
     name: 'appointments-mechanic',
     components: {
-        generalHeaderComponent,
         mechanicHeaderComponent
     },
     data(){

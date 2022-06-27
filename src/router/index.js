@@ -64,8 +64,11 @@ const router = createRouter({
       name: 'customer-profile',
       component: () => import('../customer/pages/customer-profile.component.vue')
     },
-
-
+    {
+      path: "/mechanic-admin/home",
+      name: "mechanic-admin-home",
+      component: () => import("../mechanic/pages/home-mechanic.component.vue"),
+    }
   ]
 })
 

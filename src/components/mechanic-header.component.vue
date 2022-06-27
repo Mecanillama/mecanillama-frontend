@@ -38,7 +38,6 @@ export default{
             navigation:[
                 { label: "Home",icon:'pi pi-fw pi-home', to: "/home-customer" },
                 { label: "Appointments", icon:'pi pi-fw pi-calendar',to: "/appointments-customer" },
-                { label: "Favourites", icon:'pi pi-fw pi-star', to: "/favourites" },
                 { label: "Notifications", icon:'pi pi-fw pi-bell', to: "/notifications" },
             ],
             accountMenu: [{
