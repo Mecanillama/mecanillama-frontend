@@ -1,9 +1,11 @@
 import axios from "axios";
+import http from "../../core/services/http-common";
 
-const API_URL = "https://localhost:7070/api/v1/users";
+
+const API_URL = "https://localhost:7056/api/v1/users";
 const USER_KEY = "user";
 
-export class AuthenticationApiService {
+class AuthenticationApiService {
   signIn(request) {
     return axios.post(`${API_URL}/sign-in`, request).then((response) => {
       if (response.data.token) {
@@ -21,3 +23,5 @@ export class AuthenticationApiService {
     localStorage.removeItem("user");
   }
 }
+export default new AuthenticationApiService();
+

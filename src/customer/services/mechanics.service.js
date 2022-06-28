@@ -4,4 +4,7 @@ export class MechanicsApiService {
     getAll() {
         return http.get("/mechanics");
       }
+    getByUserId(userId) {
+        return http.get(`/mechanics/${ userId }`);
+    }
 }

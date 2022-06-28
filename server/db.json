@@ -73,7 +73,8 @@
       "phone": "123456789",
       "description": "This is a family-owned and operated business that has been proudly serving the community since 1999.  These repairs can range from minor and major mechanical repairs, to tires and wheel alignment, to check engine light diagnosis and repairs, to state safety inspections, as well as your scheduled maintenance needs.",
       "location": "San Borja",
-      "image": "https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
+      "image": "https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460",
+      "userId": 1
     },
     {
       "id": 2,

@@ -45,37 +45,37 @@
 </template>
 
 <script>
-import AuthService from '../../security/services/auth.service.js'
-
+import AuthenticationApiService from '../../security/services/authentication-api.service.js'
 export default {    
     name: 'sign-in',
     data:() => {
         return{
             email: null,
-            password: null
+            password: null,
+            authenticationApiService:null
         };
+    },
+    created(){
+
     },
 
     methods: {
         async submit() {
             const userGiven = this.getUser();
-            await AuthService.signIn(JSON.stringify(userGiven))
+            await AuthenticationApiService.signIn(JSON.stringify(userGiven))
                 .then((response) => {
-                    localStorage.setItem("user", JSON.stringify(response.data.user));
-                    localStorage.setItem(
-                        "accessToken",
-                        JSON.stringify(response.data.accessToken));
-                    console.log(response.data.user)
-
-                    const user=JSON.parse(AuthService.getCurrentUser());
-                    console.log(user)
-                    if(user.role === "customer"){
-                        this.$router.push("/home-customer");
-                    }
-                    if(user.role === "mechanic"){
-                        this.$router.push("/home-mechanic");
-                    }
-                    console.log(userGiven.email)
+                    //localStorage.setItem("user", JSON.stringify(response.data.user));
+                    // localStorage.setItem("accessToken",JSON.stringify(response.data.accessToken));
+                    this.goToComponent(response.data.userId)
+                    // const user=JSON.parse(AuthService.getCurrentUser());
+                    // console.log(user)
+                    // if(user.role === "customer"){
+                    //     this.$router.push("/home-customer");
+                    // }
+                    // if(user.role === "mechanic"){
+                    //     this.$router.push("/mechanic-admin/home");
+                    // }
+                    // console.log(userGiven.email)
                 })
                 .catch((error) => {
                     if (error.request.status === 400) {
@@ -89,6 +89,31 @@ export default {
                 password: this.password,
             };
         },
+        async goToComponent(userId){
+            let login=false;
+            await MechanicsApiService.getByUserId(userId)
+                .then(response => {
+                    localStorage.setItem('mechanic', JSON.stringify(response.data.user));
+                    login = true;
+                    this.$router.push("/mechanic-admin/home");
+                }).catch(e => {
+                    console.log(e);
+                });
+            if (!login) {
+                await CustomersApiService.getByUserId(userId)
+                    .then(response => {
+                    localStorage.setItem('customer', JSON.stringify(response.data.user));
+                    login = true;
+                    this.$router.push("//home-customer");
+                }).catch(e => {
+                    console.log(e);
+                });
+            }
+
+            if(!login){
+                alert('Wrong data!');
+            }
+        }
     }
 }
 </script>

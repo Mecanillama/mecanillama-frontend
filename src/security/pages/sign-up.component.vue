@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import AuthService from '../../security/services/auth.service.js'
+import AuthenticationApiService from '../../security/services/auth.service.js'
 
 export default {    
     name: 'sign-up',
@@ -68,6 +68,7 @@ export default {
             email: null,
             password: null,
             role: null,
+            errors:[],
             roles: [
 			{name: 'Mechanic', value: 'mechanic'},
 			{name: 'Customer', value: 'customer'},
@@ -77,7 +78,7 @@ export default {
 
     methods: {
         async signUpUser(newUser){
-            await AuthService.signUp(newUser)
+            await AuthenticationApiService.signUp(newUser)
                 .then((response) => {
                     console.log(response.data.user)
             })
