@@ -76,13 +76,11 @@ export default {
           response.data.token
         );
         console.log(newresponse);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
         if (response.data.role === "customer") {
-          localStorage.setItem("user", JSON.stringify(response.data.id));
-          console.log(localStorage.getItem("user"));
           this.$router.push("/home-customer");
         }
         if (response.data.role === "mechanic") {
-          localStorage.setItem("user", JSON.stringify(response.data.user));
           this.$router.push("/mechanic-admin/home");
         }
       }
