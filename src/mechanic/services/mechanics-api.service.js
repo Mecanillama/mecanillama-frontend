@@ -7,6 +7,9 @@ export class MechanicsProfileApiService {
   getById(id) {
     return http.get(`/mechanics/${id}`);
   }
+  getByUserId(id) {
+    return http.get(`/mechanics/uid/${id}`);
+  }
   create(data) {
     return http.post("/mechanics", data);
   }
@@ -16,4 +19,5 @@ export class MechanicsProfileApiService {
   delete(id) {
     return http.delete(`/mechanics/${id}`);
   }
+
 }

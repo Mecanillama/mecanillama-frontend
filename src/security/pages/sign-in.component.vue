@@ -76,7 +76,8 @@ export default {
           response.data.token
         );
         console.log(newresponse);
-        localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("user", JSON.stringify(response.data.id));
+        console.log(localStorage.getItem('user'));
         if (response.data.role === "customer") {
           this.$router.push("/home-customer");
         }

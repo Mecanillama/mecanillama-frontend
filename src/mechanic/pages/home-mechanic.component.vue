@@ -1,16 +1,16 @@
 <template>
   <mechanic-header-component></mechanic-header-component>
 
-  <div class ="container">
+  <div class="container">
     <div id="sup" class="container">
       <img
         src="https://images.unsplash.com/photo-1588993986550-6ae221c7146e?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=460"
       />
       <div>
         <span>
-          <h1 class="mb-1">Formula I</h1>
+          <h1 class="mb-1">{{ mechanic.name }}</h1>
           <p class="m-1">
-            This is a family-owned and operated business that has been proudly serving the community since 1999.  These repairs can range from minor and major mechanical repairs, to tires and wheel alignment, to check engine light diagnosis and repairs, to state safety inspections, as well as your scheduled maintenance needs.
+            {{ mechanic.description }}
           </p>
           <router-link to="">
             <pv-button id="button" label="Edit" />
@@ -22,7 +22,6 @@
       <appointments-mechanic-component></appointments-mechanic-component>
     </div>
   </div>
-
 </template>
 
 
@@ -40,13 +39,18 @@ export default {
     return {
       mechanic: null,
       mechanicUserService: null,
+      mechanicId: null,
     };
   },
   created() {
     this.mechanicUserService = new MechanicsProfileApiService();
-    this.mechanicUserService.getById("1").then((response) => {
+    this.mechanicId = localStorage.getItem("user");
+    console.log(this.mechanicId);
+    this.mechanicUserService.getByUserId(this.mechanicId).then((response) => {
+      console.log(response);
       this.mechanic = response.data;
     });
+    
   },
 };
 </script>
