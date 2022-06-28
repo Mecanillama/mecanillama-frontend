@@ -2,8 +2,8 @@ import axios from "axios";
 import http from "../../core/services/http-common";
 
 
-const API_URL = "http://localhost:3000/api/v1/auth/sign-up";
-const API_URL_SIGNIN = "http://localhost:3000/api/v1/auth/sign-in";
+const API_URL = "https://mecanillamaapi20220627212013.azurewebsites.net/api/v1/users/sign-up";
+const API_URL_SIGNIN = "https://mecanillamaapi20220627212013.azurewebsites.net/api/v1/users/sign-in";
 
 class AuthService {
     signUp(user) {
