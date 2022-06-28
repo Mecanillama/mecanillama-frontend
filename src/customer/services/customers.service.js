@@ -5,6 +5,6 @@ export class CustomersApiService {
         return http.get("/customers");
       }
     getByUserId(userId) {
-        return http.get(`/customers/${ userId }`);
+        return http.get(`/customers/uid/${ userId }`);
     }
 }
