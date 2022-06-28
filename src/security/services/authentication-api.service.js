@@ -2,7 +2,7 @@ import axios from "axios";
 import http from "../../core/services/http-common";
 
 
-const API_URL = "https://localhost:7056/api/v1/users";
+const API_URL = "https://mecanillama-api.azurewebsites.net/api/v1/users";
 const USER_KEY = "user";
 
 class AuthenticationApiService {
@@ -21,6 +21,13 @@ class AuthenticationApiService {
 
   signOut() {
     localStorage.removeItem("user");
+  }
+
+  iniciar(email, password) {
+    return axios.post(`${API_URL}/sign-in`, {
+      email: email,
+      password: password,
+    });
   }
 }
 export default new AuthenticationApiService();

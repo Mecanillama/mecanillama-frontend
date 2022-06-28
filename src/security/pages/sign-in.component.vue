@@ -7,7 +7,7 @@
         <div class="flex flex-column align-items-center justify-content-center" style="max-width: 26rem;">
         <h1 class="text-center text-6xl my-7 font-bold">Welcome again!</h1>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="login">
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
@@ -52,7 +52,6 @@ export default {
         return{
             email: null,
             password: null,
-            authenticationApiService:null
         };
     },
     created(){
@@ -60,6 +59,11 @@ export default {
     },
 
     methods: {
+        async login(){
+            const response = await AuthenticationApiService.iniciar(this.email, this.password);
+            if (response.data.token) this.$router.push("/home-customer");
+            console.log(response.data.token);
+        },
         async submit() {
             const userGiven = this.getUser();
             await AuthenticationApiService.signIn(JSON.stringify(userGiven))
