@@ -77,11 +77,12 @@ export default {
         );
         console.log(newresponse);
         if (response.data.role === "customer") {
-          localStorage.setItem("customer", JSON.stringify(response.data.user));
+          localStorage.setItem("user", JSON.stringify(response.data.id));
+          console.log(localStorage.getItem("user"));
           this.$router.push("/home-customer");
         }
         if (response.data.role === "mechanic") {
-          localStorage.setItem("mechanic", JSON.stringify(response.data.user));
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           this.$router.push("/mechanic-admin/home");
         }
       }
