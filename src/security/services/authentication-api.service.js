@@ -29,6 +29,10 @@ class AuthenticationApiService {
       password: password,
     });
   }
+
+  mostrar(token){
+    return axios.get(API_URL, { headers: { 'Authorization': `Bearer ${token}`}});
+  }
 }
 export default new AuthenticationApiService();
 
