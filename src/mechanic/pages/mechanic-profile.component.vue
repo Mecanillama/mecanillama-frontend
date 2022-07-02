@@ -1,11 +1,5 @@
 <template>
   <customer-header-component></customer-header-component>
-  <pv-dropdown
-    v-model="selectedMechanic"
-    :options="mechanics"
-    optionLabel="name"
-    v-on:change="updateSelectedMechanic"
-  ></pv-dropdown>
   <div class="m-6">
     <div class="grid">
       <div class="col text-center">
@@ -34,27 +28,57 @@
         <pv-button @click="openNew">Make an appointment</pv-button>
       </div>
 
-        <pv-dialog v-model:visible="appointmentDialog" :style="{ width: '450px'}" header="Make an appointment" :modal="true" class="p-fluid">
-          <div class="field mt-3">
-            <div class="field">
-              <label for="date">Date</label>
-                <pv-calendar placeholder="Select a Date" id="date" v-model="appointment.date" autocomplete="off"  dateFormat="dd-mm-yy" :minDate="minDate"></pv-calendar>
-            </div>
+      <pv-dialog
+        v-model:visible="appointmentDialog"
+        :style="{ width: '450px' }"
+        header="Make an appointment"
+        :modal="true"
+        class="p-fluid"
+      >
+        <div class="field mt-3">
+          <div class="field">
+            <label for="date">Date</label>
+            <pv-calendar
+              placeholder="Select a Date"
+              id="date"
+              v-model="appointment.date"
+              :reduce="(availableTimes) => availableTimes.time"
+              autocomplete="off"
+              dateFormat="dd-mm-yy"
+              :minDate="minDate"
+            ></pv-calendar>
           </div>
+        </div>
 
-          <div class="field mt-3">
-              <div class="field">
-                 <label for="time">Time</label>
-                  <pv-dropdown required id = "time" v-model="appointment.time" :options="availableTimes" optionLabel="time" placeholder="Select a Time" ></pv-dropdown>
-              </div>
+        <div class="field mt-3">
+          <div class="field">
+            <label for="time">Time</label>
+            <pv-dropdown
+              required
+              id="time"
+              v-model="appointment.time"
+              :options="availableTimes"
+              optionLabel="time"
+              placeholder="Select a Time"
+            ></pv-dropdown>
           </div>
+        </div>
 
-          <template #footer>
-            <pv-button :label="'Cancel'.toUpperCase()" icon="pi pi-times" class="p-button-text" @click="hideDialog" />
-            <pv-button :label="'Save'.toUpperCase()" icon="pi pi-check" class="p-button-text" @click="saveAppointment" />
-          </template>
-        </pv-dialog>
-
+        <template #footer>
+          <pv-button
+            :label="'Cancel'.toUpperCase()"
+            icon="pi pi-times"
+            class="p-button-text"
+            @click="hideDialog"
+          />
+          <pv-button
+            :label="'Save'.toUpperCase()"
+            icon="pi pi-check"
+            class="p-button-text"
+            @click="saveAppointment"
+          />
+        </template>
+      </pv-dialog>
     </div>
     <div
       class="
@@ -158,9 +182,6 @@
           @click="addComment"
         />
       </div>
-
-      <!--<review-component></review-component>-->
-
     </div>
   </div>
 </template>
@@ -191,39 +212,47 @@ export default {
         car: "car test",
         publisher: "name test",
         date: "date test",
-        workshopId: null,
       },
       appointment: {
+        customerId: null,
+        mechanicId: null,
         date: null,
         time: null,
       },
       availableTimes: [
-			  {time: '08:00 AM', value: '08:00'},
-			  {time: '10:00 AM', value: '10:00'},
-        {time: '12:00 PM', value: '12:00'},
-			  {time: '2:00 PM', value: '2:00'},
-        {time: '4:00 PM', value: '4:00'},
-        {time: '6:00 PM', value: '6:00'},
+        { time: "08:00 AM", value: "08:00" },
+        { time: "10:00 AM", value: "10:00" },
+        { time: "12:00 PM", value: "12:00" },
+        { time: "14:00 PM", value: "2:00" },
+        { time: "16:00 PM", value: "4:00" },
+        { time: "18:00 PM", value: "6:00" },
       ],
       mechanics: [],
+      mechanicId: null,
       selectedMechanic: {},
       reviews: [],
       reviewsService: null,
       mechanicsService: null,
       appointmentsService: null,
-      minDate: null
+      minDate: null,
     };
   },
   created() {
+    this.appointment.mechanicId = this.$route.params.mechanicId;
+    this.mechanicId = this.$route.params.mechanicId;
+    this.appointment.customerId = localStorage.getItem("user");
     this.reviewsService = new ReviewsApiService();
     this.mechanicsService = new MechanicsProfileApiService();
     this.appointmentsService = new AppointmentsApiService();
     let today = new Date();
     this.minDate = new Date();
     this.minDate.setDate(today.getDate() + 1);
+    this.mechanicsService.getById(this.mechanicId).then((response) => {
+      this.selectedMechanic = response.data;
+    });
+
     this.mechanicsService.getAll().then((response) => {
       this.mechanics = response.data;
-      this.selectedMechanic = this.mechanics[0];
       this.reviewsService
         .findByMechanicId(this.selectedMechanic.id)
         .then((response) => {
@@ -246,20 +275,24 @@ export default {
     },
     saveAppointment() {
       this.submitted = true;
+      this.appointment.time = this.appointment.time.value;
+      this.appointment.mechanicId = this.$route.params.mechanicId;
+      this.appointment.customerId = localStorage.getItem("user");
+      this.mechanicId = this.$route.params.mechanicId;
       console.log(this.appointment);
-        this.appointmentsService.create(this.appointment).then((response) => {
-            this.$toast.add({
-              severity: "success",
-              summary: "Successful",
-              detail: "Appointment Created",
-              life: 3000,
-           });
-            console.log(response);
-          });
-          this.appointmentDialog = false;
+      this.appointmentsService.create(this.appointment).then((response) => {
+        this.$toast.add({
+          severity: "success",
+          summary: "Successful",
+          detail: "Appointment Created",
+          life: 3000,
+        });
+        console.log(response);
+      });
+      this.appointmentDialog = false;
     },
 
-    hideDialog(){
+    hideDialog() {
       this.appointmentDialog = false;
     },
     addComment() {
@@ -269,7 +302,7 @@ export default {
         this.field = false;
         this.newReview.rating = this.rating;
         this.newReview.body = this.body;
-        this.newReview.workshopId = this.selectedMechanic.id;
+        this.newReview.mechanicId = this.selectedMechanic.id;
         this.reviewsService.create(this.newReview).then((response) => {
           this.reviews.push(response.data);
         });

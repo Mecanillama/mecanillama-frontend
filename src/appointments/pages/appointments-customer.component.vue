@@ -2,22 +2,6 @@
 <customer-header-component></customer-header-component>
         <div>
             <div class="m-6">
-                <pv-toolbar class="mb-4">
-                    <template #start>
-                    <pv-button
-                        label="New appointment"
-                        icon="pi pi-plus"
-                        class="p-button-success mr-2"
-                        @click="openNew" />
-                    </template>
-                    <template #end>
-                    <pv-button
-                        label="Export"
-                        icon="pi pi-upload"
-                        class="p-button-help"
-                        @click="exportToCSV($event)" />
-                    </template>
-                </pv-toolbar>
                 <pv-data-table
                     ref="dt"
                     v-model:selection="selectedJobOffers"
@@ -122,6 +106,7 @@ export default {
             ? this.statuses[0].label
             : this.statuses[1].label;
         appointment.date = appointment.date.slice(0,10);
+        appointment.time = appointment.time;
         return appointment;
     },
     getStorableAppointment(displayableAppointment) {

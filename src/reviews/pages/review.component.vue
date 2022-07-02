@@ -45,7 +45,7 @@ export default {
         car: "car test",
         publisher: "name test",
         date: "date test",
-        workshopId: null,
+        mechanicId: null,
       },
 
       selectedMechanic: {},
@@ -76,7 +76,7 @@ export default {
         this.field = false;
         this.newReview.rating = this.rating;
         this.newReview.body = this.body;
-        this.newReview.workshopId = this.selectedMechanic.id;
+        this.newReview.mechanicId = this.selectedMechanic.id;
         this.reviewsService.create(this.newReview).then((response) => {
           this.reviews.push(response.data);
         });

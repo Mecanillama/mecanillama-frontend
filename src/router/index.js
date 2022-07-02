@@ -45,7 +45,7 @@ const router = createRouter({
       component: () => import('../mechanic/pages/home-mechanic.component.vue')
     },
     {
-      path: '/mechanic-profile',
+      path: '/mechanic-profile/:mechanicId',
       name: 'mechanic-profile',
       component: () => import('../mechanic/pages/mechanic-profile.component.vue')
     },
@@ -64,8 +64,11 @@ const router = createRouter({
       name: 'customer-profile',
       component: () => import('../customer/pages/customer-profile.component.vue')
     },
-
-
+    {
+      path: "/mechanic-admin/home",
+      name: "mechanic-admin-home",
+      component: () => import("../mechanic/pages/home-mechanic.component.vue"),
+    }
   ]
 })
 
